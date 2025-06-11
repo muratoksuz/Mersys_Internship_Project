@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="mySuit" parallel="tests" thread-count="2">
+    <test name="test1">
+        <parameter name="BrowserTipi" value="edge"></parameter>
+        <classes>
+        </classes>
+    </test>
+    <test name="test2">
+        <parameter name="BrowserTipi" value="firefox"></parameter>
+        <classes>
+        </classes>
+    </test>
+</suite>
