@@ -1,7 +1,6 @@
 package Pages;
 
 import Utilities.GWD;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -17,13 +16,30 @@ public class DialogContent extends ParentPage{
     }
 
 
+    @FindBy(xpath="(//user-image)[1]")
+    public WebElement profileImage;
+
+
+    @FindBy(xpath="(//div[@class='mat-mdc-menu-content']//button)[4]")
+    public WebElement settingsButton;
+
+    @FindBy(xpath="(//div[@class='mat-mdc-select-arrow-wrapper'])[4]")
+    public WebElement openThemesButton;
+
+    @FindBy(xpath = "//div[@role='listbox']//mat-option")
+    public List<WebElement> dropDownMenuItems;
+
+    @FindBy(xpath = "//div[@role='listbox']//mat-option")
+    public List<WebElement> dropDownMenuItemsControl;
 
 
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
         {
-           //case "": return this.element;
+           case "profileImage": return this.profileImage;
+           case "settingsButton": return this.settingsButton;
+           case "openThemesButton": return this.openThemesButton;
 
         }
         return null;
