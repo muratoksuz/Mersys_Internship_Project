@@ -33,6 +33,25 @@ public class DialogContent extends ParentPage{
     public List<WebElement> dropDownMenuItemsControl;
 
 
+    // tc04--------------
+
+    @FindBy(xpath = "//button[@class='mdc-button mat-mdc-button-base mat-mdc-menu-trigger mat-mdc-button-wrapper mat-mdc-button mat-mdc-button-unchecked mat-unthemed']")
+    public WebElement hamburgerMenubutton;
+
+    @FindBy(xpath = "//span[text()='Messaging']")
+    public WebElement messaging;
+
+    @FindBy(xpath = "//div[@id='mat-menu-panel-5']//button[@role='menuitem']//span[@class='mat-mdc-menu-item-text']/span")
+    public List<WebElement> MessagingMenuItems;
+
+    @FindBy(xpath = "//span[text()='Send Message']")
+    public WebElement sendmessage;
+
+    @FindBy(xpath = "//span[normalize-space()='New Message']")
+    public WebElement Messagenewpage;
+
+    //tc04------------------------------
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
