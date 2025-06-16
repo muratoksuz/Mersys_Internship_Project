@@ -9,4 +9,7 @@ Feature: Grading Functionality
 
   Scenario: Grade Examining
 
-    And Find the Grading Button
+    And Find the Grading Button And Click
+    And Observe Course Grade and Reports Button
+    And Control the Transcript By Subject List
+    Then Click on the Reports Button and Observe Student Transcripts

@@ -15,10 +15,9 @@ public class DialogContent extends ParentPage{
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
-
+    //TC_15--------
     @FindBy(xpath="(//user-image)[1]")
     public WebElement profileImage;
-
 
     @FindBy(xpath="(//div[@class='mat-mdc-menu-content']//button)[4]")
     public WebElement settingsButton;
@@ -29,8 +28,43 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@role='listbox']//mat-option")
     public List<WebElement> dropDownMenuItems;
 
-    @FindBy(xpath = "//div[@role='listbox']//mat-option")
+    @FindBy(id = "//div[@role='listbox']//mat-option")
     public List<WebElement> dropDownMenuItemsControl;
+    //TC_15--------
+
+
+
+    //TC16----------
+    @FindBy(xpath = "//*[@page='GRADING']")
+    public WebElement gradingButton;
+
+    @FindBy(xpath = "//*[text()=' Course Grade ']")
+    public List<WebElement> courseGradeButtonSearch;
+
+    @FindBy(id = " mat-tab-group-2-label-0")
+    public WebElement courseGradeButton;
+
+    @FindBy(xpath = "//*[text()=' Reports ']")
+    public List<WebElement> reportButtonSearch;
+
+    @FindBy(id = "mat-tab-group-2-label-1")
+    public WebElement reportButton;
+
+
+    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[1]")
+    public WebElement courseListDrop;
+
+    @FindBy(xpath = "//div[@aria-labelledby='mat-mdc-form-field-label-0']/mat-option")
+    public List<WebElement> courseButtonList;
+
+    @FindBy(xpath = "//*[text()='Student Transcripts']")
+    public List<WebElement> studentTranscriptsSearch;
+
+    @FindBy(xpath = "//*[text()='Report Cards']")
+    public List<WebElement> studentReportSearch;
+
+    //TC16----------
+
 
 
     // tc04--------------
@@ -59,6 +93,10 @@ public class DialogContent extends ParentPage{
            case "profileImage": return this.profileImage;
            case "settingsButton": return this.settingsButton;
            case "openThemesButton": return this.openThemesButton;
+           case "gradingButton": return this.gradingButton;
+           case "courseGradeButton": return this.courseGradeButton;
+           case "reportButton": return this.reportButton;
+           case "courseListDrop": return this.courseListDrop;
 
         }
         return null;
