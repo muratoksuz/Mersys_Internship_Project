@@ -86,6 +86,19 @@ public class DialogContent extends ParentPage{
 
     //tc04------------------------------
 
+    // TC15
+
+    @FindBy (xpath = "(//*[@aria-haspopup='menu'])[5]//fa-icon")
+    public WebElement kebabMenu;
+
+    @FindBy (xpath = "(//*[@class='mat-mdc-menu-item-text'])[1]")
+    public WebElement excelExport;
+
+    @FindBy (xpath = "(//*[@class='mat-mdc-menu-item-text'])[2]")
+    public WebElement pdfExport;
+
+    // TC15
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
