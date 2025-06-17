@@ -44,4 +44,18 @@ public class ParentPage {
         Select select = new Select(e);
         select.selectByIndex(a);
     }
+
+    public boolean isElementVisible(WebElement e) {
+        try {
+            wait.until(ExpectedConditions.visibilityOf(e));
+            return e.isDisplayed();
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
+    public String getElementText(WebElement e) {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        return e.getText();
+    }
 }
