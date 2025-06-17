@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Locale;
 
@@ -23,7 +24,7 @@ public class GWD {
         if (threadBrowserName.get() == null) // XML den çalışmayacak diğer testlerde tarayıcı boş geldiğinde
             threadBrowserName.set("chrome");  // tarayıcı adı CHROME olarak default olsun
 
-        System.out.println(threadBrowserName.get());
+        //System.out.println(threadBrowserName.get());
 
         if (threadDriver.get() == null) { //1 kez oluştur
 
@@ -64,6 +65,8 @@ public class GWD {
         }
     }
 
+
+
     public static void wait(int saniye){
         try {
             Thread.sleep(saniye*1000);
@@ -71,6 +74,8 @@ public class GWD {
             throw new RuntimeException(e);
         }
     }
+
+
 
 
 }

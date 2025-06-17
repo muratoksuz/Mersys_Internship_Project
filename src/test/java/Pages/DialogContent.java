@@ -70,7 +70,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@role='listbox']//mat-option")
     public List<WebElement> dropDownMenuItems;
 
-    @FindBy(id = "//div[@role='listbox']//mat-option")
+    @FindBy(xpath = "//div[@role='listbox']//mat-option")
     public List<WebElement> dropDownMenuItemsControl;
     //TC_15--------
 
@@ -80,24 +80,21 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//*[@page='GRADING']")
     public WebElement gradingButton;
 
-    @FindBy(xpath = "//*[text()=' Course Grade ']")
-    public List<WebElement> courseGradeButtonSearch;
-
-    @FindBy(id = " mat-tab-group-2-label-0")
+    @FindBy(id = "mat-tab-group-0-label-0")
     public WebElement courseGradeButton;
 
-    @FindBy(xpath = "//*[text()=' Reports ']")
-    public List<WebElement> reportButtonSearch;
-
-    @FindBy(id = "mat-tab-group-2-label-1")
+    @FindBy(id = "mat-tab-group-0-label-1")
     public WebElement reportButton;
 
 
     @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[1]")
     public WebElement courseListDrop;
 
-    @FindBy(xpath = "//div[@aria-labelledby='mat-mdc-form-field-label-0']/mat-option")
+    @FindBy(xpath = "//div[@id='mat-select-0-panel']/mat-option")
     public List<WebElement> courseButtonList;
+
+    @FindBy(xpath = "//div[@id='mat-select-0-panel']/mat-option")
+    public WebElement courseButtonElements;
 
     @FindBy(xpath = "//*[text()='Student Transcripts']")
     public List<WebElement> studentTranscriptsSearch;
@@ -155,6 +152,7 @@ public class DialogContent extends ParentPage{
            case "inputUserName": return this.inputUserName;
            case "inputPassword": return this.inputPassword;
            case "loginButton": return this.loginButton;
+           case "courseButtonElements": return this.courseButtonElements;
 
         }
         return null;
