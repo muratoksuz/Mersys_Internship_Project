@@ -125,6 +125,61 @@ public class DialogContent extends ParentPage{
 
     //tc04------------------------------
 
+    //tc05------------------------------
+    @FindBy(xpath = "//button[@class='mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger mat-badge mat-badge-secondary mat-secondary mat-badge-above mat-badge-after mat-badge-medium mat-badge-hidden']")
+    public WebElement ReceiverButton;
+
+    @FindBy(xpath = "//users-search//input[@class='mat-mdc-input-element mat-mdc-form-field-input-control mdc-text-field__input cdk-text-field-autofill-monitored']")
+    public WebElement ReceiverField;
+
+    @FindBy(xpath = "//tr[@_ngcontent-ng-c3768754809='']//td[3]")
+    public List<WebElement> Receiverlist;
+
+    @FindBy(xpath = "//tr[@_ngcontent-ng-c3768754809=''][1]//td[@class='mat-mdc-cell mdc-data-table__cell cdk-cell cdk-column-select mat-column-select ng-tns-c3768754809-1 ng-star-inserted']")
+    public WebElement Receivercheked;
+
+    @FindBy(xpath = "//span[text()='Add & Close']")
+    public WebElement ReceiverAdd;
+
+    @FindBy(xpath = "//input[@class='mat-mdc-input-element mat-mdc-form-field-input-control mdc-text-field__input cdk-text-field-autofill-monitored']")
+    public WebElement Subject;
+
+    @FindBy(xpath = "//iframe[@class='tox-edit-area__iframe']")
+    public WebElement TextEditorIframe;
+
+    @FindBy(xpath = "//body[@class='mce-content-body ']")
+    public WebElement TextEditor;
+
+    @FindBy(xpath = " //span[text()='Insert']")
+    public WebElement Insertbutton;
+
+    @FindBy(xpath = "//div[@class='tox-menu tox-collection tox-collection--list tox-selected-menu']//div[@role='menuitem']//div[@class='tox-collection__item-label']")
+    public List<WebElement>InsertMenuList ;
+
+    @FindBy(xpath = "//button[@class='mat-mdc-tooltip-trigger mat-badge mat-badge-secondary mat-mdc-button-base mdc-button mat-tonal-button basic mat-badge-above mat-badge-after mat-badge-medium mat-badge-hidden']")
+    public WebElement AttachFilesButton;
+
+    @FindBy(xpath = "//button[@class='mat-mdc-menu-item mat-focus-indicator']//span[text()=' From My Files ']")
+    public WebElement MyFiles;
+
+    @FindBy(xpath = "//tr[@class='mat-mdc-row mdc-data-table__row cdk-row ng-star-inserted item-draggable'][1]//td[1]")
+    public WebElement MyFilesSelect;
+
+    @FindBy(xpath = "//span[@class='ng-star-inserted']")
+    public WebElement AttachFilesselect;
+
+    @FindBy(xpath = "//span[text()='Send']")
+    public WebElement MessageSendButton;
+
+    @FindBy(xpath = "//span[text()='Outbox']")
+    public WebElement Outbox;
+
+    @FindBy(xpath = "//tr[@class='mat-mdc-row mdc-data-table__row cdk-row remove-background ng-tns-c3768754809-1 ng-star-inserted']//td[3]")
+    public List<WebElement> OutboxSubjectList;
+
+    //tc05------------------------------------------------------
+
+
     // TC15
 
     @FindBy (xpath = "(//*[@aria-haspopup='menu'])[5]//fa-icon")
