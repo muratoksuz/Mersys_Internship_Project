@@ -20,7 +20,7 @@ public class TC_16_Steps {
     @When("Find the Grading Button And Click")
     public void findTheGradingButtonAndClick() {
 
-        if (dc.gradingButton.isDisplayed()){
+        if (dc.gradingButton.isDisplayed()) {
             System.out.println("Grading link is visible");
             dc.myClick(dc.gradingButton);
         } else {
@@ -33,21 +33,24 @@ public class TC_16_Steps {
 
         waitU.until(ExpectedConditions.visibilityOf(dc.courseGradeButton));
         waitU.until(ExpectedConditions.visibilityOf(dc.reportButton));
-        System.out.println(dc.courseGradeButton.getText()+" button is visible");
-        System.out.println(dc.reportButton.getText()+" button is visible");
+        System.out.println(dc.courseGradeButton.getText() + " button is visible");
+        System.out.println(dc.reportButton.getText() + " button is visible");
     }
 
     @And("Control the Transcript By Subject List")
     public void controlTheTranscriptBySubjectList() {
         dc.myClick(dc.courseListDrop);
         waitU.until(ExpectedConditions.visibilityOf(dc.courseButtonElements));
-        for (int i = 0; i < dc.courseButtonList.size(); i++){
+        for (int i = 0; i < dc.courseButtonList.size(); i++) {
             System.out.println("dc = " + dc.courseButtonList.get(i).getText());
             dc.myClick(dc.courseButtonList.get(i));
             GWD.wait(1);
-            dc.myClick(dc.courseListDrop);
+            if (i == 8) {
+                continue;
+            } else {
+                dc.myClick(dc.courseListDrop);
+            }
         }
-        dc.myClick(dc.gradingButton);
     }
 
     @Then("Click on the Reports Button and Observe Student Transcripts")
@@ -55,11 +58,12 @@ public class TC_16_Steps {
 
 
         dc.myClick(dc.reportButton);
-        if (dc.studentTranscriptsSearch.size()>0 && dc.studentReportSearch.size()>0){
+        GWD.wait(2);
+        if (dc.studentTranscriptsSearch.size() > 0 && dc.studentReportSearch.size() > 0) {
             System.out.println("Reports and Student Transcripts are visible");
+        } else {
+            System.out.println("Reports and Student Transcripts are not visible");
         }
-
-        waitU.until(ExpectedConditions.visibilityOf(dc.courseGradeButton));
         dc.myClick(dc.courseGradeButton);
     }
 }
