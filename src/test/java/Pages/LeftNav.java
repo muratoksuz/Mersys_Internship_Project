@@ -24,6 +24,45 @@ public class LeftNav extends ParentPage{
 
     // TC15
 
+    //TC09
+
+    @FindBy(xpath = "//button[@title='Toggle menu']")
+    private WebElement hamburgerMenu;
+
+    @FindBy(xpath = "//span[text()='Finans']")
+    private WebElement financeLink;
+
+
+
+    @FindBy(xpath = "//h1[contains(text(),'Finans')]")
+    public WebElement finansPageBaslik;
+
+    public void clickFunction(String elementName) {
+        if (elementName.equalsIgnoreCase("finans")) {
+            myClick(financeLink);
+        } else {
+            System.out.println("LeftNav'da tanımlı değil: " + elementName);
+        }
+    }
+
+    //TC09
+
+    //TC010
+
+    @FindBy(xpath = "//button[@id='hamburgerMenu']")
+    public WebElement hamburgerMenuButton;
+
+    // Hamburger menü açma methodu
+    public void clickHamburgerMenu() {
+        hamburgerMenuButton.click();
+    }
+
+    // Finans linkine tıklama methodu
+    public void clickFinanceLink() {
+        financeLink.click();
+    }
+
+    //TC010
 
     public WebElement getWebElement(String strElement)
     {

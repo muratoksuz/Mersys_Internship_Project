@@ -1,18 +1,22 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class DialogContent extends ParentPage{
 
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
+        this.wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
     }
 
     // TC_001,TC_002,TC_003
@@ -138,6 +142,54 @@ public class DialogContent extends ParentPage{
 
     // TC15
 
+    //TC009
+
+    @FindBy(xpath = "//tr[td[text()='Öğrenci Adı']]")
+    public WebElement ogrenciAdiSatiri;
+
+    @FindBy(xpath = "//h1[contains(text(),'Ödeme Detayları')]")
+    public WebElement odemeDetaylariSayfasiElementi;
+
+    @FindBy(xpath = "//button[contains(text(),'Fee/Balance Detail')]")
+    public WebElement feeBalanceDetailButton;
+
+    @FindBy(xpath = "//h1[contains(text(),'Detay Sayfası Başlığı')]")
+    public WebElement detaySayfasiElementi;
+
+    @FindBy(xpath = "//table[@id='taksitlendirmeTablosu']")
+    public WebElement taksitlendirmeTablosuElementi;
+
+    //TC009
+
+    //TC10
+
+    @FindBy(id = "onlinePaymentBtn")
+    public WebElement onlinePaymentButton;
+
+
+    @FindBy(id = "stripePaymentOption")
+    public WebElement stripePaymentOption;
+
+    @FindBy(id = "payButton") // Ödeme yap butonu
+    public WebElement payButton;
+
+    @FindBy(id = "successMessage") // Ödeme başarı mesajı
+    public WebElement successMessage;
+
+    // Stripe ödeme seçimi için method
+    public void selectStripePayment() {
+        stripePaymentOption.click();
+    }
+
+    // Ödeme yap methodu
+    public void makePayment(String amount) {
+        WebElement amountInput = GWD.getDriver().findElement(By.id("amountInput"));
+        amountInput.clear();
+        amountInput.sendKeys(amount);
+        payButton.click();
+    }
+
+    //TC10
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
@@ -160,7 +212,8 @@ public class DialogContent extends ParentPage{
 
     public void verifyMessageContainsText(WebElement element, String searchText){
         wait.until(ExpectedConditions.visibilityOf(element));
-        Assert.assertTrue(element.getText().toLowerCase().contains(searchText.toLowerCase()));
+        Assert.assertTrue(element.getText().toLowerCase().contains(searchText.toLowerCase()),
+                "Expected text not found! Actual: " + element.getText());
 
     }
 }
