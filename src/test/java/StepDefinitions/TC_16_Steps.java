@@ -4,15 +4,25 @@ import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+import static Utilities.GWD.getDriver;
 
 public class TC_16_Steps {
     DialogContent dc = new DialogContent();
-    @And("Find the Grading Button And Click")
+    WebDriverWait waitU = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
+
+    @When("Find the Grading Button And Click")
     public void findTheGradingButtonAndClick() {
 
         if (dc.gradingButton.isDisplayed()){
             System.out.println("Grading link is visible");
+            dc.myClick(dc.gradingButton);
         } else {
             System.out.println("Grading link is not visible");
         }
@@ -21,27 +31,35 @@ public class TC_16_Steps {
     @And("Observe Course Grade and Reports Button")
     public void observeCourseGradeAndReportsButton() {
 
-        if (dc.courseGradeButtonSearch.size()>0 && dc.reportButtonSearch.size()>0){
-            System.out.println("Course Grade and Student Transcript buttons are visible");
-        }
+        waitU.until(ExpectedConditions.visibilityOf(dc.courseGradeButton));
+        waitU.until(ExpectedConditions.visibilityOf(dc.reportButton));
+        System.out.println(dc.courseGradeButton.getText()+" button is visible");
+        System.out.println(dc.reportButton.getText()+" button is visible");
     }
 
     @And("Control the Transcript By Subject List")
     public void controlTheTranscriptBySubjectList() {
-        for (int i = 1; i < dc.courseButtonList.size(); i++){
-            dc.myClick(dc.courseListDrop);
+        dc.myClick(dc.courseListDrop);
+        waitU.until(ExpectedConditions.visibilityOf(dc.courseButtonElements));
+        for (int i = 0; i < dc.courseButtonList.size(); i++){
+            System.out.println("dc = " + dc.courseButtonList.get(i).getText());
             dc.myClick(dc.courseButtonList.get(i));
-            GWD.wait(2);
+            GWD.wait(1);
+            dc.myClick(dc.courseListDrop);
         }
+        dc.myClick(dc.gradingButton);
     }
 
     @Then("Click on the Reports Button and Observe Student Transcripts")
     public void clickOnTheReportsButtonAndObserveStudentTranscripts() {
+
+
         dc.myClick(dc.reportButton);
         if (dc.studentTranscriptsSearch.size()>0 && dc.studentReportSearch.size()>0){
             System.out.println("Reports and Student Transcripts are visible");
         }
-        GWD.wait(2);
+
+        waitU.until(ExpectedConditions.visibilityOf(dc.courseGradeButton));
         dc.myClick(dc.courseGradeButton);
     }
 }
