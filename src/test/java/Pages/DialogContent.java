@@ -15,6 +15,48 @@ public class DialogContent extends ParentPage{
         PageFactory.initElements(GWD.getDriver(), this);
     }
 
+    // TC_001,TC_002,TC_003
+
+    @FindBy(xpath="//*[@formcontrolname='username']")
+    public WebElement inputUserName;
+
+    @FindBy(xpath="//*[@formcontrolname='password']")
+    public WebElement inputPassword;
+
+    @FindBy(xpath="//*[@aria-label='LOGIN']")
+    public WebElement loginButton;
+
+    @FindBy(xpath="//*[contains(text(),'Invalid username or password')]")
+    public WebElement invalidTextClick;
+
+    @FindBy(xpath="//*[@class='hot-toast-bar-base-wrapper']")
+    public WebElement invalidText;
+
+    @FindBy(xpath="//*[contains(text(),'Welcome, Student')]")
+    public WebElement welcomeStudentTxt;
+
+    @FindBy(xpath="//img[contains(@src,'data:image/png')]")
+    public WebElement logoTechnoStudy;
+
+    @FindBy(xpath="//*[@page='COURSES']")
+    public WebElement CoursesBtn;
+
+    @FindBy(xpath="//*[@page='CALENDAR']")
+    public WebElement CalendarBtn;
+
+    @FindBy(xpath="//*[@page='ATTENDANCE']")
+    public WebElement AttendanceBtn;
+
+    @FindBy(xpath="//*[@page='ASSIGNMENT']")
+    public WebElement AssignmentBtn;
+
+    @FindBy(xpath="//*[@page='GRADING']")
+    public WebElement GradingBtn;
+
+    // TC_001,TC_002,TC_003
+
+
+
     //TC_15--------
     @FindBy(xpath="(//user-image)[1]")
     public WebElement profileImage;
@@ -97,6 +139,9 @@ public class DialogContent extends ParentPage{
            case "courseGradeButton": return this.courseGradeButton;
            case "reportButton": return this.reportButton;
            case "courseListDrop": return this.courseListDrop;
+           case "inputUserName": return this.inputUserName;
+           case "inputPassword": return this.inputPassword;
+           case "loginButton": return this.loginButton;
 
         }
         return null;
