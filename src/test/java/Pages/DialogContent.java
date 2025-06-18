@@ -1,18 +1,22 @@
 package Pages;
 
 import Utilities.GWD;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
 import java.util.List;
 
 public class DialogContent extends ParentPage{
 
     public DialogContent() {
         PageFactory.initElements(GWD.getDriver(), this);
+        this.wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
     }
 
     // TC_001,TC_002,TC_003
@@ -125,6 +129,61 @@ public class DialogContent extends ParentPage{
 
     //tc04------------------------------
 
+    //tc05------------------------------
+    @FindBy(xpath = "//button[@class='mdc-icon-button mat-mdc-icon-button mat-mdc-button-base mat-mdc-tooltip-trigger mat-badge mat-badge-secondary mat-secondary mat-badge-above mat-badge-after mat-badge-medium mat-badge-hidden']")
+    public WebElement ReceiverButton;
+
+    @FindBy(xpath = "//users-search//input[@class='mat-mdc-input-element mat-mdc-form-field-input-control mdc-text-field__input cdk-text-field-autofill-monitored']")
+    public WebElement ReceiverField;
+
+    @FindBy(xpath = "//tr[@_ngcontent-ng-c3768754809='']//td[3]")
+    public List<WebElement> Receiverlist;
+
+    @FindBy(xpath = "//tr[@_ngcontent-ng-c3768754809=''][1]//td[@class='mat-mdc-cell mdc-data-table__cell cdk-cell cdk-column-select mat-column-select ng-tns-c3768754809-1 ng-star-inserted']")
+    public WebElement Receivercheked;
+
+    @FindBy(xpath = "//span[text()='Add & Close']")
+    public WebElement ReceiverAdd;
+
+    @FindBy(xpath = "//input[@class='mat-mdc-input-element mat-mdc-form-field-input-control mdc-text-field__input cdk-text-field-autofill-monitored']")
+    public WebElement Subject;
+
+    @FindBy(xpath = "//iframe[@class='tox-edit-area__iframe']")
+    public WebElement TextEditorIframe;
+
+    @FindBy(xpath = "//body[@class='mce-content-body ']")
+    public WebElement TextEditor;
+
+    @FindBy(xpath = " //span[text()='Insert']")
+    public WebElement Insertbutton;
+
+    @FindBy(xpath = "//div[@class='tox-menu tox-collection tox-collection--list tox-selected-menu']//div[@role='menuitem']//div[@class='tox-collection__item-label']")
+    public List<WebElement>InsertMenuList ;
+
+    @FindBy(xpath = "//button[@class='mat-mdc-tooltip-trigger mat-badge mat-badge-secondary mat-mdc-button-base mdc-button mat-tonal-button basic mat-badge-above mat-badge-after mat-badge-medium mat-badge-hidden']")
+    public WebElement AttachFilesButton;
+
+    @FindBy(xpath = "//button[@class='mat-mdc-menu-item mat-focus-indicator']//span[text()=' From My Files ']")
+    public WebElement MyFiles;
+
+    @FindBy(xpath = "//tr[@class='mat-mdc-row mdc-data-table__row cdk-row ng-star-inserted item-draggable'][1]//td[1]")
+    public WebElement MyFilesSelect;
+
+    @FindBy(xpath = "//span[@class='ng-star-inserted']")
+    public WebElement AttachFilesselect;
+
+    @FindBy(xpath = "//span[text()='Send']")
+    public WebElement MessageSendButton;
+
+    @FindBy(xpath = "//span[text()='Outbox']")
+    public WebElement Outbox;
+
+    @FindBy(xpath = "//tr[@class='mat-mdc-row mdc-data-table__row cdk-row remove-background ng-tns-c3768754809-1 ng-star-inserted']//td[3]")
+    public List<WebElement> OutboxSubjectList;
+
+    //tc05------------------------------------------------------
+
+
     // TC15
 
     @FindBy (xpath = "(//*[@aria-haspopup='menu'])[5]//fa-icon")
@@ -137,6 +196,135 @@ public class DialogContent extends ParentPage{
     public WebElement pdfExport;
 
     // TC15
+
+    //TC009
+
+    @FindBy(xpath = "//tr[td[text()='Öğrenci Adı']]")
+    public WebElement ogrenciAdiSatiri;
+
+    @FindBy(xpath = "//h1[contains(text(),'Ödeme Detayları')]")
+    public WebElement odemeDetaylariSayfasiElementi;
+
+    @FindBy(xpath = "//button[contains(text(),'Fee/Balance Detail')]")
+    public WebElement feeBalanceDetailButton;
+
+    @FindBy(xpath = "//h1[contains(text(),'Detay Sayfası Başlığı')]")
+    public WebElement detaySayfasiElementi;
+
+    @FindBy(xpath = "//table[@id='taksitlendirmeTablosu']")
+    public WebElement taksitlendirmeTablosuElementi;
+
+    //TC009
+
+    //TC10
+
+    @FindBy(id = "onlinePaymentBtn")
+    public WebElement onlinePaymentButton;
+
+
+    @FindBy(id = "stripePaymentOption")
+    public WebElement stripePaymentOption;
+
+    @FindBy(id = "payButton") // Ödeme yap butonu
+    public WebElement payButton;
+
+    @FindBy(id = "successMessage") // Ödeme başarı mesajı
+    public WebElement successMessage;
+
+    // Stripe ödeme seçimi için method
+    public void selectStripePayment() {
+        stripePaymentOption.click();
+    }
+
+    // Ödeme yap methodu
+    public void makePayment(String amount) {
+        WebElement amountInput = GWD.getDriver().findElement(By.id("amountInput"));
+        amountInput.clear();
+        amountInput.sendKeys(amount);
+        payButton.click();
+    }
+
+    //TC10
+
+        @FindBy(xpath = "(//ms-icon-button[@icon='file-import']//button)[3]")
+    public WebElement firstSubmit;
+
+    @FindBy(xpath = "//*[@title='Rich Text Area']")
+    public WebElement textingArea;
+
+    @FindBy(xpath = "//*[@id='tinymce']")
+    public WebElement textArea;
+
+    @FindBy(xpath = "//ms-button[@icon='paperclip']")
+    public WebElement attachFileButton;
+
+    @FindBy(xpath = "//*[text()=' From My Files ']")
+    public WebElement fromMyFIlesButton;
+
+    @FindBy(xpath = "//*[text()='Select']")
+    public WebElement selectButton;
+
+    @FindBy(xpath = "//*[text()='Save as Draft']")
+    public WebElement saveDButton;
+
+    @FindBy(xpath = "//div[text()='Successfully saved as a draft']")
+    public WebElement draftSuccessMessage;
+
+    @FindBy(xpath = "//mat-dialog-actions//*[@icon='file-import']/button")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "//span[text()=' Yes ']")
+    public WebElement yesButton;
+
+    @FindBy(xpath = "//div[text()='Successfully submitted to review']")
+    public WebElement submittedToReviewMessage;
+
+    @FindBy(xpath = "//ms-icon-button[@icon='info']")
+    public WebElement infoButton;
+
+    @FindBy(xpath = "//span[text()='New Submission']")
+    public WebElement newSubmissionButton;
+
+    @FindBy(xpath = "//*[@aria-label='Open calendar']")
+    public WebElement openCalenderButton;
+
+    @FindBy(xpath = "//span[text()=' Last year ']")
+    public WebElement lastYearButton;
+
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//button[@matbadgecolor='accent']")
+    public List<WebElement> iconsList;
+
+    @FindBy(xpath = "(//span[text()=' Due Date : '])[1]")
+    public WebElement dueText;
+
+
+
+    //TC24
+    @FindBy(xpath = "((//tr)[5]//td)[6]")
+    public WebElement notStartedCourse;
+
+    @FindBy(xpath = "//mat-toolbar-row")
+    public WebElement courseName;
+
+    @FindBy(xpath = "( //user-image)[2]/following-sibling::span")
+    public WebElement teacherName;
+
+    @FindBy(xpath = "")
+    public WebElement startTime;
+
+    @FindBy(xpath = "")
+    public WebElement endTime;
+
+    @FindBy(xpath = "(//button[@mat-ripple-loader-class-name='mat-mdc-button-ripple'])[23]")
+    public WebElement closeButton;
+
+    @FindBy(xpath = "((//tr)[2]//td)[2]")
+    public WebElement finishedCourse;
+
+
 
     public WebElement getWebElement(String strElement)
     {
@@ -153,6 +341,10 @@ public class DialogContent extends ParentPage{
            case "inputPassword": return this.inputPassword;
            case "loginButton": return this.loginButton;
            case "courseButtonElements": return this.courseButtonElements;
+           case "notstartedcourse" : return this.notStartedCourse;
+           case "courseName" : return this.courseName;
+           case "teacherName" : return this.teacherName;
+           case "closeButton" : return this.closeButton;
 
         }
         return null;
@@ -160,7 +352,8 @@ public class DialogContent extends ParentPage{
 
     public void verifyMessageContainsText(WebElement element, String searchText){
         wait.until(ExpectedConditions.visibilityOf(element));
-        Assert.assertTrue(element.getText().toLowerCase().contains(searchText.toLowerCase()));
+        Assert.assertTrue(element.getText().toLowerCase().contains(searchText.toLowerCase()),
+                "Expected text not found! Actual: " + element.getText());
 
     }
 }
