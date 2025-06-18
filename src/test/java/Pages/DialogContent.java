@@ -184,7 +184,7 @@ public class DialogContent extends ParentPage{
     //tc05------------------------------------------------------
 
 
-    // TC15
+    // TC12
 
     @FindBy (xpath = "(//*[@aria-haspopup='menu'])[5]//fa-icon")
     public WebElement kebabMenu;
@@ -195,7 +195,7 @@ public class DialogContent extends ParentPage{
     @FindBy (xpath = "(//*[@class='mat-mdc-menu-item-text'])[2]")
     public WebElement pdfExport;
 
-    // TC15
+    // TC12
 
     //TC009
 
@@ -323,6 +323,54 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "((//tr)[2]//td)[2]")
     public WebElement finishedCourse;
+
+    // TC13
+
+    @FindBy (xpath = "(//div[ contains(@class, 'mdc-tab mat-mdc-tab') ])[3]")
+    public WebElement attendanceExcusesBtn;
+
+    @FindBy (xpath = "//*[@tooltip='ATTENDANCE_EXCUSE.TITLE.ADD']")
+    public WebElement addBtn;
+
+    @FindBy (xpath = "//textarea[@placeholder='Message']")
+    public WebElement messageArea;
+
+    @FindBy (xpath = "(//button[@matbadgecolor='secondary'])[2]")
+    public WebElement fileBtn;
+
+    @FindBy (xpath = "(//*[@class='mat-mdc-menu-content']/button)[2]")
+    public WebElement fromMyFilesBtn;
+
+    @FindBy (xpath = "(//*[@aria-label='Close dialog'])[2]")
+    public WebElement closeBtn;
+
+    @FindBy (xpath = "//*[@caption='GENERAL.BUTTON.SELECT']")
+    public WebElement selectBtn;
+
+    @FindBy (xpath = "//*[@caption='GENERAL.BUTTON.SEND']")
+    public WebElement sendBtn;
+
+    @FindBy(xpath = "//*[contains(text(), 'Successfully')]")
+    public WebElement successMessag;
+
+    // TC13
+
+    // TC14
+
+    @FindBy (xpath = "//*[@class='user-info']")
+    public WebElement profileLogo;
+
+    @FindBy (xpath = "//button[contains(@class, 'mdc-fab--mini mat-mdc-mini-fab ')]")
+    public WebElement uploadPictureBtn;
+
+    @FindBy (xpath = "(//*[@matbutton='tonal'])[2]")
+    public WebElement uploadBtn;
+
+    @FindBy (xpath = "//button[ contains(@class, ' mat-tonal-button primary ') ]/span")
+    public WebElement saveBtn;
+
+
+    // TC14
 
 
 
