@@ -29,7 +29,7 @@ public class LeftNav extends ParentPage{
     @FindBy(xpath = "//button[@title='Toggle menu']")
     private WebElement hamburgerMenu;
 
-    @FindBy(xpath = "//span[text()='Finans']")
+    @FindBy(xpath = "//a[@href='/finance']")
     private WebElement financeLink;
 
 
@@ -53,16 +53,33 @@ public class LeftNav extends ParentPage{
     public WebElement hamburgerMenuButton;
 
     // Hamburger menü açma methodu
+
+
+    // Finans linkine tıklama methodu
+
+
+    //TC010
+
+    //TC011
+
+
+    @FindBy(xpath = "//a[contains(@href,'/finance/my')]") // My Finance alt linki
+    public WebElement myFinanceLink;
+
+    // Navigasyon metotları
     public void clickHamburgerMenu() {
         hamburgerMenuButton.click();
     }
 
-    // Finans linkine tıklama methodu
     public void clickFinanceLink() {
         financeLink.click();
     }
 
-    //TC010
+    public void clickMyFinanceLink() {
+        myFinanceLink.click();
+    }
+
+    //TC011
 
     public WebElement getWebElement(String strElement)
     {

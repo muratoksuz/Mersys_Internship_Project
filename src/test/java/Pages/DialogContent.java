@@ -222,196 +222,35 @@ public class DialogContent extends ParentPage{
     public WebElement onlinePaymentButton;
 
 
-    @FindBy(id = "stripePaymentOption")
+    @FindBy(xpath = "//button[contains(text(),'Stripe')]")
     public WebElement stripePaymentOption;
 
-    @FindBy(id = "payButton") // Ödeme yap butonu
+    @FindBy(xpath = "//button[@id='payButton']") // Ödeme yap butonu
     public WebElement payButton;
 
-    @FindBy(id = "successMessage") // Ödeme başarı mesajı
+    @FindBy(xpath = "//div[contains(@class,'toast') and contains(text(),'Payment successful')]") // Ödeme başarı mesajı
     public WebElement successMessage;
 
-    // Stripe ödeme seçimi için method
+
+    //TC10
+
+    //TC011
+
+    @FindBy(xpath = "//input[@id='amountInput']")
+    public WebElement amountInput;
+
+    // Stripe seçimi
     public void selectStripePayment() {
         stripePaymentOption.click();
     }
 
-    // Ödeme yap methodu
+    // Ödeme işlemi
     public void makePayment(String amount) {
-        WebElement amountInput = GWD.getDriver().findElement(By.id("amountInput"));
         amountInput.clear();
         amountInput.sendKeys(amount);
         payButton.click();
     }
 
-    //TC10
-
-        @FindBy(xpath = "(//ms-icon-button[@icon='file-import']//button)[3]")
-    public WebElement firstSubmit;
-
-    @FindBy(xpath = "//*[@title='Rich Text Area']")
-    public WebElement textingArea;
-
-    @FindBy(xpath = "//*[@id='tinymce']")
-    public WebElement textArea;
-
-    @FindBy(xpath = "//ms-button[@icon='paperclip']")
-    public WebElement attachFileButton;
-
-    @FindBy(xpath = "//*[text()=' From My Files ']")
-    public WebElement fromMyFIlesButton;
-
-    @FindBy(xpath = "//*[text()='Select']")
-    public WebElement selectButton;
-
-    @FindBy(xpath = "//*[text()='Save as Draft']")
-    public WebElement saveDButton;
-
-    @FindBy(xpath = "//div[text()='Successfully saved as a draft']")
-    public WebElement draftSuccessMessage;
-
-    @FindBy(xpath = "//mat-dialog-actions//*[@icon='file-import']/button")
-    public WebElement submitButton;
-
-    @FindBy(xpath = "//span[text()=' Yes ']")
-    public WebElement yesButton;
-
-    @FindBy(xpath = "//div[text()='Successfully submitted to review']")
-    public WebElement submittedToReviewMessage;
-
-    @FindBy(xpath = "//ms-icon-button[@icon='info']")
-    public WebElement infoButton;
-
-    @FindBy(xpath = "//span[text()='New Submission']")
-    public WebElement newSubmissionButton;
-
-    @FindBy(xpath = "//*[@aria-label='Open calendar']")
-    public WebElement openCalenderButton;
-
-    @FindBy(xpath = "//span[text()=' Last year ']")
-    public WebElement lastYearButton;
-
-    @FindBy(xpath = "//*[text()='Search']")
-    public WebElement searchButton;
-
-    @FindBy(xpath = "//button[@matbadgecolor='accent']")
-    public List<WebElement> iconsList;
-
-    @FindBy(xpath = "(//span[text()=' Due Date : '])[1]")
-    public WebElement dueText;
-
-
-
-    //TC24&TC025
-    @FindBy(xpath = "((//tr)[5]//td)[6]")
-    public WebElement notStartedCourse;
-
-    @FindBy(xpath = "//mat-toolbar-row")
-    public WebElement courseName;
-
-    @FindBy(xpath = "( //user-image)[2]/following-sibling::span")
-    public WebElement teacherName;
-
-    @FindBy(xpath = "")
-    public WebElement startTime;
-
-    @FindBy(xpath = "")
-    public WebElement endTime;
-
-    @FindBy(xpath = "(//button[@mat-ripple-loader-class-name='mat-mdc-button-ripple'])[23]")
-    public WebElement closeButton;
-
-    @FindBy(xpath = "((//tr)[2]//td)[2]")
-    public WebElement finishedCourse;
-    //TC24&TC025
-
-    // TC13
-
-    @FindBy (xpath = "(//div[ contains(@class, 'mdc-tab mat-mdc-tab') ])[3]")
-    public WebElement attendanceExcusesBtn;
-
-    @FindBy (xpath = "//*[@tooltip='ATTENDANCE_EXCUSE.TITLE.ADD']")
-    public WebElement addBtn;
-
-    @FindBy (xpath = "//textarea[@placeholder='Message']")
-    public WebElement messageArea;
-
-    @FindBy (xpath = "(//button[@matbadgecolor='secondary'])[2]")
-    public WebElement fileBtn;
-
-    @FindBy (xpath = "(//*[@class='mat-mdc-menu-content']/button)[2]")
-    public WebElement fromMyFilesBtn;
-
-    @FindBy (xpath = "(//*[@aria-label='Close dialog'])[2]")
-    public WebElement closeBtn;
-
-    @FindBy (xpath = "//*[@caption='GENERAL.BUTTON.SELECT']")
-    public WebElement selectBtn;
-
-    @FindBy (xpath = "//*[@caption='GENERAL.BUTTON.SEND']")
-    public WebElement sendBtn;
-
-    @FindBy(xpath = "//*[contains(text(), 'Successfully')]")
-    public WebElement successMessag;
-
-    // TC13
-
-    // TC14
-
-    @FindBy (xpath = "//*[@class='user-info']")
-    public WebElement profileLogo;
-
-    @FindBy (xpath = "//button[contains(@class, 'mdc-fab--mini mat-mdc-mini-fab ')]")
-    public WebElement uploadPictureBtn;
-
-    @FindBy (xpath = "(//*[@matbutton='tonal'])[2]")
-    public WebElement uploadBtn;
-
-    @FindBy (xpath = "//button[ contains(@class, ' mat-tonal-button primary ') ]/span")
-    public WebElement saveBtn;
-
-
-    // TC14
-
-
-
-
-
-    //TC22 & TC 23
-    @FindBy(xpath = "(//button[@matbutton='tonal'])[2]")
-    public WebElement searchAssignmentButton;
-
-    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[1]")
-    public WebElement courseListDropA;
-
-    @FindBy(xpath = "//div[@role='listbox']/mat-option")
-    public List<WebElement> courseButtonListA;
-
-    @FindBy(xpath = "//div[@role='listbox']/mat-option")
-    public WebElement courseButtonElementsA;
-
-    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[2]")
-    public WebElement statusListDropA;
-
-    @FindBy(xpath = "//div[@role='listbox']/mat-option")
-    public List<WebElement> statusButtonListA;
-
-    @FindBy(xpath = "//div[@role='listbox']/mat-option")
-    public WebElement statusButtonElementsA;
-
-    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[3]")
-    public WebElement semesterListDropA;
-
-    @FindBy(xpath = "//div[@role='listbox']/mat-option")
-    public List<WebElement> semesterButtonListA;
-
-    @FindBy(xpath = "//div[@role='listbox']/mat-option")
-    public WebElement semesterButtonElementsA;
-
-    @FindBy(xpath = "(//button[@matbutton='tonal'])[1]")
-    public WebElement showByButton;
-
-    //TC22 & TC 23
 
     public WebElement getWebElement(String strElement)
     {
