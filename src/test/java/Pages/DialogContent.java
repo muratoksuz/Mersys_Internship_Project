@@ -302,7 +302,7 @@ public class DialogContent extends ParentPage{
 
 
 
-    //TC24
+    //TC24&TC025
     @FindBy(xpath = "((//tr)[5]//td)[6]")
     public WebElement notStartedCourse;
 
@@ -323,8 +323,47 @@ public class DialogContent extends ParentPage{
 
     @FindBy(xpath = "((//tr)[2]//td)[2]")
     public WebElement finishedCourse;
+    //TC24&TC025
 
 
+
+
+
+    //TC22 & TC 23
+    @FindBy(xpath = "(//button[@matbutton='tonal'])[2]")
+    public WebElement searchAssignmentButton;
+
+    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[1]")
+    public WebElement courseListDropA;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option")
+    public List<WebElement> courseButtonListA;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option")
+    public WebElement courseButtonElementsA;
+
+    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[2]")
+    public WebElement statusListDropA;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option")
+    public List<WebElement> statusButtonListA;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option")
+    public WebElement statusButtonElementsA;
+
+    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[3]")
+    public WebElement semesterListDropA;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option")
+    public List<WebElement> semesterButtonListA;
+
+    @FindBy(xpath = "//div[@role='listbox']/mat-option")
+    public WebElement semesterButtonElementsA;
+
+    @FindBy(xpath = "(//button[@matbutton='tonal'])[1]")
+    public WebElement showByButton;
+
+    //TC22 & TC 23
 
     public WebElement getWebElement(String strElement)
     {
@@ -345,6 +384,15 @@ public class DialogContent extends ParentPage{
            case "courseName" : return this.courseName;
            case "teacherName" : return this.teacherName;
            case "closeButton" : return this.closeButton;
+           case "searchAssignmentButton" : return this.searchAssignmentButton;
+           case "courseListDropA" : return this.courseListDropA;
+           case "courseButtonElementsA" : return this.courseButtonElementsA;
+           case "statusListDropA" : return this.statusListDropA;
+           case "statusButtonElementsA" : return this.statusButtonElementsA;
+           case "semesterListDropA" : return this.semesterListDropA;
+           case "semesterButtonElementsA" : return this.semesterButtonElementsA;
+           case "showByButton" : return this.showByButton;
+
 
         }
         return null;
