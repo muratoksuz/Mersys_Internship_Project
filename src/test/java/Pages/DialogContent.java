@@ -167,29 +167,36 @@ public class DialogContent extends ParentPage{
     public WebElement onlinePaymentButton;
 
 
-    @FindBy(id = "stripePaymentOption")
+    @FindBy(xpath = "//button[contains(text(),'Stripe')]")
     public WebElement stripePaymentOption;
 
-    @FindBy(id = "payButton") // Ödeme yap butonu
+    @FindBy(xpath = "//button[@id='payButton']") // Ödeme yap butonu
     public WebElement payButton;
 
-    @FindBy(id = "successMessage") // Ödeme başarı mesajı
+    @FindBy(xpath = "//div[contains(@class,'toast') and contains(text(),'Payment successful')]") // Ödeme başarı mesajı
     public WebElement successMessage;
 
-    // Stripe ödeme seçimi için method
+
+    //TC10
+
+    //TC011
+
+    @FindBy(xpath = "//input[@id='amountInput']")
+    public WebElement amountInput;
+
+    // Stripe seçimi
     public void selectStripePayment() {
         stripePaymentOption.click();
     }
 
-    // Ödeme yap methodu
+    // Ödeme işlemi
     public void makePayment(String amount) {
-        WebElement amountInput = GWD.getDriver().findElement(By.id("amountInput"));
         amountInput.clear();
         amountInput.sendKeys(amount);
         payButton.click();
     }
 
-    //TC10
+    //TC011
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
