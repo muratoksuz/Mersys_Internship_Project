@@ -246,13 +246,7 @@ public class DialogContent extends ParentPage{
 
     //TC10
 
-
-
-
-
-
-
-    @FindBy(xpath = "(//ms-icon-button[@icon='file-import']//button)[3]")
+        @FindBy(xpath = "(//ms-icon-button[@icon='file-import']//button)[3]")
     public WebElement firstSubmit;
 
     @FindBy(xpath = "//*[@title='Rich Text Area']")
@@ -308,9 +302,27 @@ public class DialogContent extends ParentPage{
 
 
 
+    //TC24
+    @FindBy(xpath = "((//tr)[5]//td)[6]")
+    public WebElement notStartedCourse;
 
+    @FindBy(xpath = "//mat-toolbar-row")
+    public WebElement courseName;
 
+    @FindBy(xpath = "( //user-image)[2]/following-sibling::span")
+    public WebElement teacherName;
 
+    @FindBy(xpath = "")
+    public WebElement startTime;
+
+    @FindBy(xpath = "")
+    public WebElement endTime;
+
+    @FindBy(xpath = "(//button[@mat-ripple-loader-class-name='mat-mdc-button-ripple'])[23]")
+    public WebElement closeButton;
+
+    @FindBy(xpath = "((//tr)[2]//td)[2]")
+    public WebElement finishedCourse;
 
 
 
@@ -329,6 +341,10 @@ public class DialogContent extends ParentPage{
            case "inputPassword": return this.inputPassword;
            case "loginButton": return this.loginButton;
            case "courseButtonElements": return this.courseButtonElements;
+           case "notstartedcourse" : return this.notStartedCourse;
+           case "courseName" : return this.courseName;
+           case "teacherName" : return this.teacherName;
+           case "closeButton" : return this.closeButton;
 
         }
         return null;

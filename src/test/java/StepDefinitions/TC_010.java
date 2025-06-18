@@ -5,35 +5,14 @@ import org.testng.Assert;
 
 public class TC_010 {
 
-    @Given("Öğrenci kullanıcı adı ve şifresi ile sisteme giriş yapar")
-    public void ogrenci_sisteme_giris_yapar() {
-        // Login işlemleri burada yapılacak
-        System.out.println("Kullanıcı sisteme giriş yaptı");
-    }
 
-    @When("Öğrenci hamburger menüsünü açar")
-    public void ogrenci_hamburger_menusu_acar() {
-        // Hamburger menüsünü açma işlemi
-        System.out.println("Hamburger menüsü açıldı");
-    }
 
-    @When("Finans linkine tıklar")
-    public void finans_linkine_tiklar() {
-        // Finans linkine tıklama
-        System.out.println("Finans linkine tıklandı");
-    }
 
     @Then("Finans sayfası açılır")
     public void finans_sayfasi_acilir() {
         // Finans sayfasının açıldığını doğrulama
         System.out.println("Finans sayfası açıldı");
         Assert.assertTrue(true); // Örnek assertion
-    }
-
-    @Given("Öğrenci Finans sayfasındadır")
-    public void ogrenci_finans_sayfasindadir() {
-        // Finans sayfasına gidildiği varsayımı
-        System.out.println("Finans sayfasındadır");
     }
 
     @When("Öğrenci isminin bulunduğu satıra tıklar")
@@ -60,11 +39,6 @@ public class TC_010 {
         Assert.assertTrue(true);
     }
 
-    @Then("\"Fee/Balance Detail\" butonu görünür olmalıdır")
-    public void fee_balance_detail_butonu_gorunur_olmalidir() {
-        System.out.println("\"Fee/Balance Detail\" butonu görünüyor");
-        Assert.assertTrue(true);
-    }
 
     @When("Öğrenci Stripe ödeme seçeneğini seçer")
     public void ogrenci_stripe_odeme_secimini_yapar() {

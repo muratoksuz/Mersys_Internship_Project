@@ -16,7 +16,7 @@ public class TopNav extends ParentPage{
     @FindBy(xpath = "//ms-layout-menu-button[@page='COURSES']")
     public WebElement courses;
 
-    @FindBy(xpath = "//ms-layout-menu-button[@page='CALENDAR']")
+    @FindBy(xpath = "//ms-layout-menu-button[@page='CALENDAR']//button")
     public WebElement calender;
 
     @FindBy(xpath = "//ms-layout-menu-button[@page='ATTENDANCE']")
@@ -58,6 +58,8 @@ public class TopNav extends ParentPage{
 
 
 
+
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement.toLowerCase())
@@ -75,6 +77,7 @@ public class TopNav extends ParentPage{
             case "trash" : return this.trash;
             case "finance" : return this.finance;
             case "myfinance" : return this.myfinance;
+
         }
 
         return null;
