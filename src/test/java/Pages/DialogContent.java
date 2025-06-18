@@ -245,6 +245,75 @@ public class DialogContent extends ParentPage{
     }
 
     //TC10
+
+
+
+
+
+
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='file-import']//button)[3]")
+    public WebElement firstSubmit;
+
+    @FindBy(xpath = "//*[@title='Rich Text Area']")
+    public WebElement textingArea;
+
+    @FindBy(xpath = "//*[@id='tinymce']")
+    public WebElement textArea;
+
+    @FindBy(xpath = "//ms-button[@icon='paperclip']")
+    public WebElement attachFileButton;
+
+    @FindBy(xpath = "//*[text()=' From My Files ']")
+    public WebElement fromMyFIlesButton;
+
+    @FindBy(xpath = "//*[text()='Select']")
+    public WebElement selectButton;
+
+    @FindBy(xpath = "//*[text()='Save as Draft']")
+    public WebElement saveDButton;
+
+    @FindBy(xpath = "//div[text()='Successfully saved as a draft']")
+    public WebElement draftSuccessMessage;
+
+    @FindBy(xpath = "//mat-dialog-actions//*[@icon='file-import']/button")
+    public WebElement submitButton;
+
+    @FindBy(xpath = "//span[text()=' Yes ']")
+    public WebElement yesButton;
+
+    @FindBy(xpath = "//div[text()='Successfully submitted to review']")
+    public WebElement submittedToReviewMessage;
+
+    @FindBy(xpath = "//ms-icon-button[@icon='info']")
+    public WebElement infoButton;
+
+    @FindBy(xpath = "//span[text()='New Submission']")
+    public WebElement newSubmissionButton;
+
+    @FindBy(xpath = "//*[@aria-label='Open calendar']")
+    public WebElement openCalenderButton;
+
+    @FindBy(xpath = "//span[text()=' Last year ']")
+    public WebElement lastYearButton;
+
+    @FindBy(xpath = "//*[text()='Search']")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//button[@matbadgecolor='accent']")
+    public List<WebElement> iconsList;
+
+    @FindBy(xpath = "(//span[text()=' Due Date : '])[1]")
+    public WebElement dueText;
+
+
+
+
+
+
+
+
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
