@@ -53,6 +53,9 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath="//*[@page='GRADING']")
     public WebElement GradingBtn;
 
+    @FindBy(xpath="//*[contains(@style,'margin-right')]/span/button")
+    public WebElement HamburgerMenu;
+
     // TC_001,TC_002,TC_003
 
 
