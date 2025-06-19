@@ -16,13 +16,6 @@ public class TC_011 {
     LeftNav leftNav = new LeftNav();
     DialogContent dialogContent = new DialogContent();
 
-    @Given("Öğrenci kullanıcı adı ve şifresi ile sisteme giriş yapar")
-    public void ogrenciGirisYapar() {
-        driver.get("https://test.mersys.io/");
-        driver.findElement(By.id("username")).sendKeys("studentUser");
-        driver.findElement(By.id("password")).sendKeys("studentPass");
-        driver.findElement(By.id("loginButton")).click();
-    }
 
     @When("Öğrenci hamburger menüsünü açar")
     public void hamburgerMenusuAcar() {

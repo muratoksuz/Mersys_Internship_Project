@@ -15,8 +15,8 @@ Feature: Öğrencinin Finans Sayfası Üzerindeki İşlemleri
 
   Scenario: Ödeme sayfasında "Online Payment" ve "Fee/Balance Detail" butonlarını görebilmelidir
     Given Öğrenci Ödeme sayfasındadır
-    Then "Online Payment" butonu görünür olmalıdır
-    And "Fee/Balance Detail" butonu görünür olmalıdır
+    Then 'Online Payment' butonu görünür olmalıdır
+    And 'Fee/Balance Detail' butonu görünür olmalıdır
 
   Scenario: Stripe seçerek ödeme yapabilmelidir
     Given Öğrenci Ödeme sayfasındadır

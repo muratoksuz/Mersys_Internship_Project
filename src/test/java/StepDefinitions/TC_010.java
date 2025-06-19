@@ -33,17 +33,12 @@ public class TC_010 {
         System.out.println("Ödeme sayfasındadır");
     }
 
-    @Then("\"Online Payment\" butonu görünür olmalıdır")
+    @Then("'Online Payment' butonu görünür olmalıdır")
     public void online_payment_butonu_gorunur_olmalidir() {
-        System.out.println("\"Online Payment\" butonu görünüyor");
+        System.out.println("'Online Payment' butonu görünüyor");
         Assert.assertTrue(true);
     }
 
-
-    @When("Öğrenci Stripe ödeme seçeneğini seçer")
-    public void ogrenci_stripe_odeme_secimini_yapar() {
-        System.out.println("Stripe ödeme seçildi");
-    }
 
     @When("ödeme yapar")
     public void odeme_yapar() {

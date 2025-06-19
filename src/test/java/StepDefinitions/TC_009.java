@@ -21,11 +21,6 @@ public class TC_009 {
         dialogContent.verifyMessageContainsText(dialogContent.welcomeStudentTxt, "Welcome, Student");
     }
 
-    @When("Öğrenci hamburger menüsünü açar")
-    public void ogrenci_hamburger_menusu_acar() {
-        dialogContent.myClick(dialogContent.hamburgerMenubutton);
-    }
-
     @When("Finans linkine tıklar")
     public void finans_linkine_tiklar() {
         leftNav.clickFunction("finans"); // LeftNav'deki finans locator’ı kullanılır

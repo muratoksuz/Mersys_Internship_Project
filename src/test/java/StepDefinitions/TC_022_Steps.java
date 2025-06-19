@@ -33,7 +33,7 @@ public class TC_022_Steps {
 
     @Given("Filter The Results With Every Option")
     public void filterTheResultsWithEveryOption() {
-
+/*
         dc.myClick(dc.courseListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.courseButtonElementsA));
         for (int i = 0; i < dc.courseButtonListA.size(); i++) {
@@ -47,11 +47,11 @@ public class TC_022_Steps {
                 dc.myClick(dc.courseListDropA);
             }
         }
+*/
 
-/*
         dc.myClick(dc.statusListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.statusButtonElementsA));
-        for (int i = dc.statusButtonListA.size()-1; i > -1; i--) {
+        for (int i = 0; i <dc.statusButtonListA.size(); i++) {
             dc.myClick(dc.statusButtonListA.get(i));
             GWD.wait(1);
             System.out.println("i= "+i );
@@ -61,7 +61,7 @@ public class TC_022_Steps {
                 dc.myClick(dc.statusListDropA);
             }
         }
-
+/*
         dc.myClick(dc.semesterListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.semesterButtonElementsA));
         for (int i = 0; i < dc.semesterButtonListA.size(); i++) {
