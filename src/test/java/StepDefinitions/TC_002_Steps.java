@@ -10,7 +10,7 @@ import org.testng.Assert;
 
 import java.util.Set;
 
-public class TC_002 {
+public class TC_002_Steps {
     DialogContent dc = new DialogContent();
     private String mainWindowHandle;
 

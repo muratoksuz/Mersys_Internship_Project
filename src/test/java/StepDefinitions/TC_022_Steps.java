@@ -33,7 +33,7 @@ public class TC_022_Steps {
 
     @Given("Filter The Results With Every Option")
     public void filterTheResultsWithEveryOption() {
-/*
+
         dc.myClick(dc.courseListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.courseButtonElementsA));
         for (int i = 0; i < dc.courseButtonListA.size(); i++) {
@@ -47,35 +47,36 @@ public class TC_022_Steps {
                 dc.myClick(dc.courseListDropA);
             }
         }
-*/
+
+        dc.myClick(dc.semesterListDropA);
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.semesterButtonElementsA));
+        for (int i = dc.semesterButtonListA.size()-1; i >-1 ; i--) {
+            dc.myClick(dc.semesterButtonListA.get(i));
+            System.out.println("dc.semesterButtonListA.size() = " + dc.semesterButtonListA.size());
+            GWD.wait(3);
+            if (i == 0) {
+                continue;
+            } else {
+                dc.myClick(dc.semesterListDropA);
+            }
+
+        }
+
+
 
         dc.myClick(dc.statusListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.statusButtonElementsA));
         for (int i = 0; i <dc.statusButtonListA.size(); i++) {
             dc.myClick(dc.statusButtonListA.get(i));
-            GWD.wait(1);
-            System.out.println("i= "+i );
+            GWD.wait(3);
             if (i == 0) {
                 continue;
             } else {
                 dc.myClick(dc.statusListDropA);
             }
         }
-/*
-        dc.myClick(dc.semesterListDropA);
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.semesterButtonElementsA));
-        for (int i = 0; i < dc.semesterButtonListA.size(); i++) {
-            dc.myClick(dc.semesterButtonListA.get(i));
-            System.out.println("dc.semesterButtonListA.size() = " + dc.semesterButtonListA.size());
-            GWD.wait(1);
-            System.out.println("i= "+i );
-            if (i == 3) {
-                continue;
-            } else {
-                dc.myClick(dc.semesterListDropA);
-            }
-        }
-*/
+
+
 
     }
 
@@ -87,6 +88,22 @@ public class TC_022_Steps {
 
     @Then("ShowBy The Results With Every Option")
     public void showbyTheResultsWithEveryOption() {
-        System.out.println("sonuçlar gösterildi");
+
+
+        dc.myClick(dc.showByButton);
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.showByButtonElement));
+        for (int i = 0; i < dc.showByButtonList.size(); i++) {
+            dc.myClick(dc.showByButtonList.get(i));
+            GWD.wait(1);
+            if (i == dc.showByButtonList.size()-1) {
+                continue;
+            } else {
+                dc.myClick(dc.showByButton);
+            }
+        }
+
+
+
+
     }
 }

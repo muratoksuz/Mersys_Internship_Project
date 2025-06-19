@@ -5,14 +5,10 @@ import Pages.LeftNav;
 import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.apache.commons.math3.analysis.function.Exp;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-
-public class TC_014 {
+public class TC_014_Steps {
 
     DialogContent dc = new DialogContent();
     LeftNav ln = new LeftNav();

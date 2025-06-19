@@ -6,15 +6,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.List;
 
-public class TC_024_Calendar_NotStartedCourse_Steps {
+public class TC_024_Steps {
 
     DialogContent dc = new DialogContent();
     TopNav tn = new TopNav(Utilities.GWD.getDriver());

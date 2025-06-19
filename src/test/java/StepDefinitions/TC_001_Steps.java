@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class TC_001 {
+public class TC_001_Steps {
 
     DialogContent dc = new DialogContent();
 

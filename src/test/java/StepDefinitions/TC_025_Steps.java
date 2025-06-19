@@ -2,18 +2,13 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.TopNav;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.time.Duration;
-import java.util.List;
 
-public class TC_025_Calendar_FinishedCourse_Steps {
+public class TC_025_Steps {
 
     DialogContent dc = new DialogContent();
     TopNav tn = new TopNav(Utilities.GWD.getDriver());

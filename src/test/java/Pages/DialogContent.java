@@ -19,7 +19,7 @@ public class DialogContent extends ParentPage{
         this.wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
     }
 
-    // TC_001,TC_002,TC_003
+    // TC_001_Steps,TC_002_Steps,TC_003
 
     @FindBy(xpath="//*[@formcontrolname='username']")
     public WebElement inputUserName;
@@ -60,7 +60,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath="//*[contains(@style,'margin-right')]/span/button")
     public WebElement HamburgerMenu;
 
-    // TC_001,TC_002,TC_003
+    // TC_001_Steps,TC_002_Steps,TC_003
 
 
 
@@ -388,7 +388,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//button[@matbutton='tonal'])[2]")
     public WebElement searchAssignmentButton;
 
-    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[1]")
+    @FindBy(xpath = "(//div[@class='mat-mdc-select-arrow-wrapper'])[1]")
     public WebElement courseListDropA;
 
     @FindBy(xpath = "//div[@role='listbox']/mat-option")
@@ -397,7 +397,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@role='listbox']/mat-option")
     public WebElement courseButtonElementsA;
 
-    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[2]")
+    @FindBy(xpath = "(//div[@class='mat-mdc-select-arrow-wrapper'])[2]")
     public WebElement statusListDropA;
 
     @FindBy(xpath = "//div[@role='listbox']/mat-option")
@@ -406,7 +406,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@role='listbox']/mat-option")
     public WebElement statusButtonElementsA;
 
-    @FindBy(xpath = "(//div[@class='mat-mdc-form-field-infix']/mat-select)[3]")
+    @FindBy(xpath = "(//div[@class='mat-mdc-select-arrow-wrapper'])[3]")
     public WebElement semesterListDropA;
 
     @FindBy(xpath = "//div[@role='listbox']/mat-option")
@@ -415,8 +415,20 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@role='listbox']/mat-option")
     public WebElement semesterButtonElementsA;
 
-    @FindBy(xpath = "(//button[@matbutton='tonal'])[1]")
+    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[4]")
     public WebElement showByButton;
+
+    @FindBy(xpath = "//div[@class='mat-mdc-menu-content']//button")
+    public List<WebElement> showByButtonList;
+
+    @FindBy(xpath = "(//button[@aria-haspopup='menu'])[4]")
+    public WebElement showByButtonElement;
+
+
+
+
+
+
 
     //TC22 & TC 23
 
@@ -447,6 +459,7 @@ public class DialogContent extends ParentPage{
            case "semesterListDropA" : return this.semesterListDropA;
            case "semesterButtonElementsA" : return this.semesterButtonElementsA;
            case "showByButton" : return this.showByButton;
+           case "showByButtonElement" : return this.showByButtonElement;
 
 
         }

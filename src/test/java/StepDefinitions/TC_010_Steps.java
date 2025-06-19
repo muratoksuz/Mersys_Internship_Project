@@ -3,7 +3,7 @@ package StepDefinitions;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 
-public class TC_010 {
+public class TC_010_Steps {
 
 
 

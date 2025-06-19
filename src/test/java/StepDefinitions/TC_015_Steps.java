@@ -3,15 +3,8 @@ package StepDefinitions;
 import Pages.DialogContent;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
-import java.time.Duration;
-
-import static Utilities.GWD.getDriver;
-
-public class TC_015 {
+public class TC_015_Steps {
 
     DialogContent dc = new DialogContent();
 

@@ -6,7 +6,7 @@ import Utilities.GWD;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 
-public class TC_009 {
+public class TC_009_Steps {
 
     DialogContent dialogContent = new DialogContent();
     LeftNav leftNav = new LeftNav();

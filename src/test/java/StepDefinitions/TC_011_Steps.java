@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
-public class TC_011 {
+public class TC_011_Steps {
 
     WebDriver driver = GWD.getDriver();
     LeftNav leftNav = new LeftNav();

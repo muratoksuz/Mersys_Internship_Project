@@ -16,7 +16,7 @@ import java.util.List;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-public class TC_05_STEPS {
+public class TC_005_Steps {
 
     WebDriver driver= GWD.getDriver();
     DialogContent dc = new DialogContent();

@@ -14,7 +14,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class _TC020_Steps {
+public class TC_020_Steps {
     TopNav tn = new TopNav(GWD.getDriver());
     DialogContent dc = new DialogContent();
     JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();

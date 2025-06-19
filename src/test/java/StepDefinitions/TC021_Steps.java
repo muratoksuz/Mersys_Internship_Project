@@ -16,7 +16,7 @@ import org.testng.Assert;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class _TC021_Steps {
+public class TC021_Steps {
     WebDriver driver= GWD.getDriver();
     DialogContent dc = new DialogContent();
     JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();

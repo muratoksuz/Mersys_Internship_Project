@@ -5,7 +5,6 @@ import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,7 +12,7 @@ import java.time.Duration;
 
 import static Utilities.GWD.getDriver;
 
-public class TC_16_Steps {
+public class TC_016_Steps {
     DialogContent dc = new DialogContent();
     WebDriverWait waitU = new WebDriverWait(getDriver(), Duration.ofSeconds(20));
 
