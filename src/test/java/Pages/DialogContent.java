@@ -384,6 +384,26 @@ public class DialogContent extends ParentPage{
     // TC14
 
 
+    // TC17
+
+    @FindBy(xpath = "//*[text()=' Course Grade ']")
+    public WebElement courseGradeButton1;
+
+    @FindBy(xpath = "//ms-standard-button[@tooltip='GENERAL.BUTTON.DOWNLOAD']")
+    public WebElement printIconButton;
+
+    //TC18
+
+    @FindBy (xpath = "//*[@page='ASSIGNMENT']")
+    public WebElement assignmentLink;
+
+    @FindBy(xpath = "//*[@class='mat-drawer-content']")
+    public List<WebElement>assignmentList;
+
+
+
+
+
     //TC22 & TC 23
     @FindBy(xpath = "(//button[@matbutton='tonal'])[2]")
     public WebElement searchAssignmentButton;
