@@ -66,4 +66,10 @@ public class ParentPage {
             throw new RuntimeException(e);
         }
     }
+
+    public void jsClick(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        JavascriptExecutor js = (JavascriptExecutor) GWD.getDriver();
+        js.executeScript("arguments[0].click();", element);
+    }
 }
