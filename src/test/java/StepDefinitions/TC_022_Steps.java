@@ -5,6 +5,7 @@ import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
@@ -34,7 +35,8 @@ public class TC_022_Steps {
     public void clickOnSearchButtonWithoutTextAndListAllAssignments() {
         dc.myClick(dc.semesterListDropA);
         dc.myClick(dc.semesterButtonListA.get(0));
-        dc.wait.until(ExpectedConditions.visibilityOf(dc.assignmentDialogListElements));
+        GWD.wait(2);
+
         if (dc.assignmentDialogList.size() >= 33) {
             System.out.println("All assignments are visible");
         } else {

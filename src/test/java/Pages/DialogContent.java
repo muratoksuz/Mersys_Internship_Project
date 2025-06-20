@@ -104,10 +104,10 @@ public class DialogContent extends ParentPage{
     public WebElement courseButtonElements;
 
     @FindBy(xpath = "//*[text()='Student Transcripts']")
-    public List<WebElement> studentTranscriptsSearch;
+    public WebElement studentTranscriptsSearch;
 
     @FindBy(xpath = "//*[text()='Report Cards']")
-    public List<WebElement> studentReportSearch;
+    public WebElement studentReportSearch;
 
     //TC16----------
 
@@ -475,7 +475,7 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//button[@aria-haspopup='menu'])[4]")
     public WebElement showByButtonElement;
 
-    @FindBy(xpath = "//div[@class='assignment']")
+    @FindBy(xpath = "//ms-icon-button[@icon='info']")
     public List<WebElement> assignmentDialogList;
 
     @FindBy(xpath = "//div[@class='assignment']")
@@ -516,6 +516,8 @@ public class DialogContent extends ParentPage{
            case "showByButton" : return this.showByButton;
            case "showByButtonElement" : return this.showByButtonElement;
            case "assignmentDialogListElements" : return this.assignmentDialogListElements;
+           case "studentTranscriptsSearch" : return this.studentTranscriptsSearch;
+           case "studentReportSearch" : return this.studentReportSearch;
 
 
         }
