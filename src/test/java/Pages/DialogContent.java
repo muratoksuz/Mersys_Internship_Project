@@ -402,7 +402,38 @@ public class DialogContent extends ParentPage{
 
 
 
+    @FindBy(css = "(//ms-icon-button[@icon='comments-alt']/button)[1]")
+    public WebElement discussionButton;
 
+    @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
+    public List<WebElement> discussionBtn;
+
+    @FindBy(xpath = "//*[@id='mat-mdc-dialog-2']")
+    public WebElement discussionWindow;
+
+    @FindBy(xpath = "//*[@id='ms-standard-button-5']")
+    public WebElement contactsButton;
+
+    @FindBy(xpath = "//*[@id='ms-standard-button-7']")
+    public WebElement chatsButton;
+
+    @FindBy(xpath = "(//ms-icon-button[@icon='paperclip'])[2]")
+    public WebElement paperclip;
+
+    @FindBy(xpath = "(//*[@class='mat-mdc-selection-list mat-mdc-list-base mdc-list ng-tns-c1704585323-5' ])[2]")
+    public List<WebElement>listbox;
+
+    @FindBy(xpath="//*[@id='mat-input-25']")
+    public WebElement discussionInput;
+
+    @FindBy(xpath = "//button[.//svg[contains(@data-icon, 'paper-plane')]]")
+    public WebElement sendButton;
+
+    @FindBy(xpath = "//ms-icon-button[@icon='comments-alt']/button")
+    public List<WebElement>IconsList;
+
+    @FindBy(xpath = "(//span[text()=' Due Date : '])[1]")
+    public WebElement dueText1;
 
     //TC22 & TC 23
     @FindBy(xpath = "(//button[@matbutton='tonal'])[2]")
