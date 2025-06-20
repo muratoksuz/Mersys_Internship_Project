@@ -23,7 +23,7 @@ public class ParentPage {
     public void myClick(WebElement e)
     {
         wait.until(ExpectedConditions.elementToBeClickable(e));
-        scrollToElement(e);
+        //scrollToElement(e);
         e.click();
     }
 

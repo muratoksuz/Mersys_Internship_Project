@@ -10,6 +10,8 @@ import org.testng.Assert;
 
 import java.awt.*;
 
+import static Utilities.GWD.getDriver;
+
 public class TC_022_Steps {
     DialogContent dc = new DialogContent();
 
@@ -52,7 +54,6 @@ public class TC_022_Steps {
         dc.wait.until(ExpectedConditions.visibilityOf(dc.semesterButtonElementsA));
         for (int i = dc.semesterButtonListA.size()-1; i >-1 ; i--) {
             dc.myClick(dc.semesterButtonListA.get(i));
-            System.out.println("dc.semesterButtonListA.size() = " + dc.semesterButtonListA.size());
             GWD.wait(3);
             if (i == 0) {
                 continue;
@@ -72,9 +73,10 @@ public class TC_022_Steps {
             if (i == 0) {
                 continue;
             } else {
-                dc.myClick(dc.statusListDropA);
+                //getDriver().navigate().refresh();
             }
         }
+
 
 
 
