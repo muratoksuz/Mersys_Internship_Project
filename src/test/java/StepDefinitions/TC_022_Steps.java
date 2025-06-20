@@ -5,6 +5,9 @@ import Utilities.GWD;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -64,6 +67,7 @@ public class TC_022_Steps {
         }
 
 
+        Actions action = new Actions(getDriver());
 
         dc.myClick(dc.statusListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.statusButtonElementsA));
@@ -73,7 +77,7 @@ public class TC_022_Steps {
             if (i == 0) {
                 continue;
             } else {
-                //getDriver().navigate().refresh();
+                action.keyDown(Keys.ESCAPE).keyUp(Keys.ESCAPE).perform();
             }
         }
 
