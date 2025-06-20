@@ -444,7 +444,11 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "(//button[@aria-haspopup='menu'])[4]")
     public WebElement showByButtonElement;
 
+    @FindBy(xpath = "//div[@class='assignment']")
+    public List<WebElement> assignmentDialogList;
 
+    @FindBy(xpath = "//div[@class='assignment']")
+    public WebElement assignmentDialogListElements;
 
 
 
@@ -480,6 +484,7 @@ public class DialogContent extends ParentPage{
            case "semesterButtonElementsA" : return this.semesterButtonElementsA;
            case "showByButton" : return this.showByButton;
            case "showByButtonElement" : return this.showByButtonElement;
+           case "assignmentDialogListElements" : return this.assignmentDialogListElements;
 
 
         }

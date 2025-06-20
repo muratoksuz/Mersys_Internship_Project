@@ -19,7 +19,6 @@ public class TC_022_Steps {
     DialogContent dc = new DialogContent();
 
 
-
     @Given("Search Button Should Be Visible")
     public void searchButtonShouldBeVisible() {
         dc.wait.until(ExpectedConditions.visibilityOf(dc.searchButton));
@@ -33,7 +32,15 @@ public class TC_022_Steps {
 
     @Then("Click on Search Button Without Text and List All Assignments")
     public void clickOnSearchButtonWithoutTextAndListAllAssignments() {
-
+        dc.myClick(dc.semesterListDropA);
+        dc.myClick(dc.semesterButtonListA.get(0));
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.assignmentDialogListElements));
+        if (dc.assignmentDialogList.size() >= 33) {
+            System.out.println("All assignments are visible");
+        } else {
+            System.out.println("All assignments are not visible");
+            System.out.println("dc.assignmentDialogList.size() = " + dc.assignmentDialogList.size());
+        }
     }
 
     @Given("Filter The Results With Every Option")
@@ -55,7 +62,7 @@ public class TC_022_Steps {
 
         dc.myClick(dc.semesterListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.semesterButtonElementsA));
-        for (int i = dc.semesterButtonListA.size()-1; i >-1 ; i--) {
+        for (int i = dc.semesterButtonListA.size() - 1; i > -1; i--) {
             dc.myClick(dc.semesterButtonListA.get(i));
             GWD.wait(3);
             if (i == 0) {
@@ -71,7 +78,7 @@ public class TC_022_Steps {
 
         dc.myClick(dc.statusListDropA);
         dc.wait.until(ExpectedConditions.visibilityOf(dc.statusButtonElementsA));
-        for (int i = 0; i <dc.statusButtonListA.size(); i++) {
+        for (int i = 0; i < dc.statusButtonListA.size(); i++) {
             dc.myClick(dc.statusButtonListA.get(i));
             GWD.wait(3);
             if (i == 0) {
@@ -80,8 +87,6 @@ public class TC_022_Steps {
                 action.keyDown(Keys.ESCAPE).keyUp(Keys.ESCAPE).perform();
             }
         }
-
-
 
 
     }
@@ -101,14 +106,12 @@ public class TC_022_Steps {
         for (int i = 0; i < dc.showByButtonList.size(); i++) {
             dc.myClick(dc.showByButtonList.get(i));
             GWD.wait(1);
-            if (i == dc.showByButtonList.size()-1) {
+            if (i == dc.showByButtonList.size() - 1) {
                 continue;
             } else {
                 dc.myClick(dc.showByButton);
             }
         }
-
-
 
 
     }
