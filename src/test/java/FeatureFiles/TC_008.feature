@@ -2,7 +2,7 @@ Feature: Make payment from finance department
 
   Background:
     Given Navigate to the website
-    When Enter valid username as "Student_6" and password as "S12345"
+    When Enter valid username as "Student_4" and password as "S12345"
     And Click on Login button
     Then The student should login successfully
 

@@ -39,9 +39,9 @@ public class TC_007_Steps {
         dc.wait.until(ExpectedConditions.visibilityOf(dc.restoreAndDeleteSuccess));
         Assert.assertTrue(dc.restoreAndDeleteSuccess.isDisplayed());
     }
-
     @And("The student clicks the delete icon and sees a confirmation popup")
     public void theStudentClicksTheDeleteIconAndSeesAConfirmationPopup() {
+
         dc.myClick(dc.deleteIcon2);
         Assert.assertTrue(dc.deleteIconYes.isDisplayed());
         dc.myClick(dc.deleteIconYes);
@@ -49,6 +49,7 @@ public class TC_007_Steps {
 
     @Then("The student confirms deletion and sees a Success message")
     public void theStudentConfirmsDeletionAndSeesASuccessMessage() {
+
         dc.wait.until(ExpectedConditions.visibilityOf(dc.deleteIcon3));
         dc.myClick(dc.deleteIcon3);
         dc.myClick(dc.deleteIconYes);

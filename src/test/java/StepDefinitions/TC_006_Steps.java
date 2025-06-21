@@ -33,6 +33,7 @@ public class TC_006_Steps {
 
     @And("Once the student confirms the deletion, they should receive a “Success” message indicating that the message was successfully deleted.")
     public void afterTheStudentCompletesTheDeletionProcessTheyShouldSeeAConfirmMessage() {
+        dc.wait.until(ExpectedConditions.visibilityOf(dc.successMessage));
         dc.verifyMessageContainsText(dc.successMessage,"Message successfully moved to trash!");
     }
 }

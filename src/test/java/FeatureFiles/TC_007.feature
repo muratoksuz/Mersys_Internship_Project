@@ -2,7 +2,7 @@ Feature: Deleting messages from the TrashBox
 
   Background:
     Given Navigate to the website
-    When Enter valid username as "Student_5" and password as "S12345"
+    When Enter valid username as "Student_4" and password as "S12345"
     And Click on Login button
     Then The student should login successfully
 

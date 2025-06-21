@@ -8,6 +8,7 @@ public class TC_008_Steps {
     DialogContent dc = new DialogContent();
     @Given("Student should be able to click on the Finance from the Hamburger menu")
     public void theStudentShouldBeAbleToClickOnTheFinanceFromTheHamburgerMenu() {
+
         dc.myClick(dc.hamburgerMenu);
         dc.myClick(dc.financeMenu);
     }
