@@ -487,6 +487,66 @@ public class DialogContent extends ParentPage{
 
     //TC22 & TC 23
 
+    // TC06 - TC07 - TC08
+    @FindBy(xpath="(//button[@aria-haspopup='menu']//fa-icon)[1]")
+    public WebElement hamburgerMenu;
+
+    @FindBy(xpath="//span[text()='Messaging']")
+    public WebElement messageButton;
+
+    @FindBy(xpath="//span[text()='Outbox']")
+    public WebElement outboxButton;
+
+    @FindBy(xpath="//ms-confirm-button[contains(@id,'ms-button')]")
+    public WebElement outboxIcon;
+
+    @FindBy(xpath="//ms-confirm-button[@id='ms-button-2']")
+    public WebElement outboxIcon3;
+
+    @FindBy(xpath="//*[text()='Confirm']")
+    public WebElement confirmAssert;
+
+    @FindBy(xpath="//button[@class='mdc-button mat-mdc-button-base secondary mat-tonal-button mat-unthemed']")
+    public WebElement confirmYes;
+
+    @FindBy(xpath="//span[text()='Trash']")
+    public WebElement trashBoxButton;
+
+    @FindBy(xpath="//ms-standard-button[@id='ms-standard-button-2']")
+    public WebElement restoreIcon;
+
+    @FindBy(xpath="//ms-delete-button[@id='ms-delete-button-0']")
+    public WebElement deleteIcon;
+
+    @FindBy(xpath="//ms-delete-button[@id='ms-delete-button-2']")
+    public WebElement deleteIcon2;
+
+    @FindBy(xpath="//ms-delete-button[@id='ms-delete-button-4']")
+    public WebElement deleteIcon3;
+
+    @FindBy(xpath="//button[@type='submit']")
+    public WebElement deleteIconYes;
+
+    @FindBy(xpath="//mat-panel-description[@class='mat-expansion-panel-header-description ng-star-inserted']/div")
+    public WebElement restoreAndDeleteSuccess;
+
+    @FindBy(xpath="//div[contains(text(),'successfully')]")
+    public WebElement successMessages;
+
+    @FindBy(xpath="//span[text()='Finance']")
+    public WebElement financeMenu;
+
+    @FindBy(xpath="//span[text()='My Finance']")
+    public WebElement myfinanceMenu;
+
+    @FindBy(xpath="//input[@placeholder='Kullanıcı Adı']")
+    public WebElement username;
+
+    @FindBy(xpath="//input[@placeholder='Parola']")
+    public WebElement password;
+
+
+
     public WebElement getWebElement(String strElement)
     {
         switch (strElement)
