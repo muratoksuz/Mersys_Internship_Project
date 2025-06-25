@@ -481,11 +481,37 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath = "//div[@class='assignment']")
     public WebElement assignmentDialogListElements;
 
-
-
-
-
     //TC22 & TC 23
+
+
+    //TC_23
+    @FindBy(xpath = "//span[@class='mdc-tab__content']//span[text()=' Weekly Course Plan ']")
+    public WebElement WeeklyCourseButton;
+
+    @FindBy(xpath = "//span[@class='mdc-tab__content']//span[text()=' Calendar ']")
+    public WebElement CalendarButton;
+
+    @FindBy(xpath = "//span[contains(text(),'Published') or contains(text(),'Started') or contains(text(),'Ended') or contains(text(),'Cancelled')]")
+    public List<WebElement> IconPSEC;
+
+    @FindBy(xpath = "//div[@_ngcontent-ng-c1425957329='']//button[1]")
+    public WebElement previousButton;
+
+    @FindBy(xpath = "//div[@_ngcontent-ng-c1425957329='']//button[3]")
+    public WebElement nextButton;
+
+    @FindBy(xpath = "//strong[@_ngcontent-ng-c1425957329='']")
+    public WebElement currentDate;
+
+    @FindBy(xpath = "//tr[@class='row100'][2]//td[3]")
+    public WebElement CourseSelect;
+
+    @FindBy(xpath = "//course-details-dialog[@class='mat-mdc-dialog-component-host']//span[contains(text(),' Course Meeting')]")
+    public WebElement CourseSelectSuccess;
+
+
+    //TC-23
+
 
     // TC06 - TC07 - TC08
     @FindBy(xpath="(//button[@aria-haspopup='menu']//fa-icon)[1]")
