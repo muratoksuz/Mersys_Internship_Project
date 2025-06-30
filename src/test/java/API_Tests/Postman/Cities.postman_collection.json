@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "4fdf7215-74db-4b9d-bdb0-f9a6e91e33c1",
+		"name": "Cities",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44961391"
+	},
+	"item": [
+		{
+			"name": "GET_Cities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 1000ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNDQyMTk2LCJpYXQiOjE3NTA4MzczOTYsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllLME4xM1BWMTQ5SFEzODczUVFYTThEIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.W6AtoqoinJxmcife1hRaqi_pueeQ4Jt3vjyugZv856WQ6hLcn0jWHbCUHPxh7IgNCgFE4CLcbBERLjgyFTKKy_rf9suoNWpHPr7cirRBCNjLwpuZ8QfUYDLozYF0hsp2kPuvxxhue7tfcyjglBn23Md9DflIfXjulsRW_r9ZjF4IhGXZleYL_3fkYfKgDFrNK3oa6M6aBWeqTY3r0WvksCK8Vfp9PsZWq9i07p74vEPYu3eQRgIu8I2CEp-s0kckt84Z2sDFj9-f7i10bwuqidWwWLfD2ONV0Z-o2RWGF477hfyXloXJ5FuMpVsozo3RtHHMzowFon9Zs6i2K29Mdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/cities",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_City",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNDQyMTk2LCJpYXQiOjE3NTA4MzczOTYsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllLME4xM1BWMTQ5SFEzODczUVFYTThEIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.W6AtoqoinJxmcife1hRaqi_pueeQ4Jt3vjyugZv856WQ6hLcn0jWHbCUHPxh7IgNCgFE4CLcbBERLjgyFTKKy_rf9suoNWpHPr7cirRBCNjLwpuZ8QfUYDLozYF0hsp2kPuvxxhue7tfcyjglBn23Md9DflIfXjulsRW_r9ZjF4IhGXZleYL_3fkYfKgDFrNK3oa6M6aBWeqTY3r0WvksCK8Vfp9PsZWq9i07p74vEPYu3eQRgIu8I2CEp-s0kckt84Z2sDFj9-f7i10bwuqidWwWLfD2ONV0Z-o2RWGF477hfyXloXJ5FuMpVsozo3RtHHMzowFon9Zs6i2K29Mdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/cities/{{CityID}}",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"cities",
+						"{{CityID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_CreateACity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"CityID\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNDQyMTk2LCJpYXQiOjE3NTA4MzczOTYsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllLME4xM1BWMTQ5SFEzODczUVFYTThEIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.W6AtoqoinJxmcife1hRaqi_pueeQ4Jt3vjyugZv856WQ6hLcn0jWHbCUHPxh7IgNCgFE4CLcbBERLjgyFTKKy_rf9suoNWpHPr7cirRBCNjLwpuZ8QfUYDLozYF0hsp2kPuvxxhue7tfcyjglBn23Md9DflIfXjulsRW_r9ZjF4IhGXZleYL_3fkYfKgDFrNK3oa6M6aBWeqTY3r0WvksCK8Vfp9PsZWq9i07p74vEPYu3eQRgIu8I2CEp-s0kckt84Z2sDFj9-f7i10bwuqidWwWLfD2ONV0Z-o2RWGF477hfyXloXJ5FuMpVsozo3RtHHMzowFon9Zs6i2K29Mdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"{{$randomCity}}\",\r\n  \"country\": { \"id\": \"685998ef8ed86951f650b876\" },\r\n  \"state\": null,\r\n  \"translateName\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/cities",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_UpdateCity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNDQyMTk2LCJpYXQiOjE3NTA4MzczOTYsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllLME4xM1BWMTQ5SFEzODczUVFYTThEIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.W6AtoqoinJxmcife1hRaqi_pueeQ4Jt3vjyugZv856WQ6hLcn0jWHbCUHPxh7IgNCgFE4CLcbBERLjgyFTKKy_rf9suoNWpHPr7cirRBCNjLwpuZ8QfUYDLozYF0hsp2kPuvxxhue7tfcyjglBn23Md9DflIfXjulsRW_r9ZjF4IhGXZleYL_3fkYfKgDFrNK3oa6M6aBWeqTY3r0WvksCK8Vfp9PsZWq9i07p74vEPYu3eQRgIu8I2CEp-s0kckt84Z2sDFj9-f7i10bwuqidWwWLfD2ONV0Z-o2RWGF477hfyXloXJ5FuMpVsozo3RtHHMzowFon9Zs6i2K29Mdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"{{CityID}}\",\r\n  \"name\": \"{{$randomCity}}\",\r\n  \"country\": {\r\n    \"id\": \"685998ef8ed86951f650b876\"\r\n  },\r\n  \"state\": {\r\n    \"id\": \"6859c3408ed86951f650b8aa\"\r\n  },\r\n  \"translateName\": []\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/cities",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNDQyMTk2LCJpYXQiOjE3NTA4MzczOTYsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllLME4xM1BWMTQ5SFEzODczUVFYTThEIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.W6AtoqoinJxmcife1hRaqi_pueeQ4Jt3vjyugZv856WQ6hLcn0jWHbCUHPxh7IgNCgFE4CLcbBERLjgyFTKKy_rf9suoNWpHPr7cirRBCNjLwpuZ8QfUYDLozYF0hsp2kPuvxxhue7tfcyjglBn23Md9DflIfXjulsRW_r9ZjF4IhGXZleYL_3fkYfKgDFrNK3oa6M6aBWeqTY3r0WvksCK8Vfp9PsZWq9i07p74vEPYu3eQRgIu8I2CEp-s0kckt84Z2sDFj9-f7i10bwuqidWwWLfD2ONV0Z-o2RWGF477hfyXloXJ5FuMpVsozo3RtHHMzowFon9Zs6i2K29Mdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/cities/{{CityID}}",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"cities",
+						"{{CityID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCityNegative",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Negative DELETE on Deleted City\", function () {\r",
+							"    pm.response.to.have.status(404); // veya 400 sistemine göre\r",
+							"\r",
+							"    const res = pm.response.json();\r",
+							"    pm.expect(res.message).to.include(\"not found\"); // sistemdeki mesaj neyse onu yaz\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNDQyMTk2LCJpYXQiOjE3NTA4MzczOTYsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllLME4xM1BWMTQ5SFEzODczUVFYTThEIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.W6AtoqoinJxmcife1hRaqi_pueeQ4Jt3vjyugZv856WQ6hLcn0jWHbCUHPxh7IgNCgFE4CLcbBERLjgyFTKKy_rf9suoNWpHPr7cirRBCNjLwpuZ8QfUYDLozYF0hsp2kPuvxxhue7tfcyjglBn23Md9DflIfXjulsRW_r9ZjF4IhGXZleYL_3fkYfKgDFrNK3oa6M6aBWeqTY3r0WvksCK8Vfp9PsZWq9i07p74vEPYu3eQRgIu8I2CEp-s0kckt84Z2sDFj9-f7i10bwuqidWwWLfD2ONV0Z-o2RWGF477hfyXloXJ5FuMpVsozo3RtHHMzowFon9Zs6i2K29Mdw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/cities/{{CityID}}",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"cities",
+						"{{CityID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CityID",
+			"value": ""
+		},
+		{
+			"key": "CityName",
+			"value": ""
+		},
+		{
+			"key": "CountryID",
+			"value": ""
+		}
+	]
+}
