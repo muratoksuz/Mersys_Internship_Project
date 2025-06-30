@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "10f27594-021c-4d5c-91f4-005b88137e6e",
+		"name": "EducationStandards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44926191",
+		"_collection_link": "https://murat-2041429.postman.co/workspace/Murat's-Workspace~eb84f5d6-cb3f-49ea-844f-1b6626728b25/collection/44926191-10f27594-021c-4d5c-91f4-005b88137e6e?action=share&source=collection_link&creator=44926191"
+	},
+	"item": [
+		{
+			"name": "EucaationStandard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log;"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/subjects/{{xTenant}}/tenant/{{schoolID}}/school/keyvalue",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"subjects",
+						"{{xTenant}}",
+						"tenant",
+						"{{schoolID}}",
+						"school",
+						"keyvalue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStandard",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"StandardID\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": null,\r\n  \"name\": \"deneme2\",\r\n  \"description\": \"deneme2\",\r\n  \"gradeLevelId\": \"65489964e70d9e34a8331e57\",\r\n\r\n  \"calculationMode\": \"MEAN\",\r\n  \"gradeCategoriesTemplateId\": \"646dff4eab1d8d3d700f1037\",\r\n  \"gradeCategoryId\": \"e38e-911f\",\r\n  \"numberOfScores\": 5,\r\n  \"parentStandardCalculationStarategy\":  \"TURN_OFF\",\r\n  \"subjectId\": \"657705ec8af7ce488ac69ba5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/education-standard",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"education-standard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStandard",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": {{StandardID}},\r\n  \"description\": \"deneme3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/education-standard",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"education-standard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStandard",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{CAMPUSURL}}/school-service/api/education-standard/{{StandardID}}",
+					"host": [
+						"{{CAMPUSURL}}"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"education-standard",
+						"{{StandardID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNTY4MTk1LCJpYXQiOjE3NTA5NjMzOTUsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllQUlQ3MUhRQzJHRVZGVkc4QjFHTldKIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.Rtjna45mdYPinPOS794Snrmwn4mYj2U7TdO4TY_ccSCA-VU67pFY0jWsXcZMRsLBJ2yELHTuCjyRzqCUScreheLL1528CAPOD_feM-MbkdynsrXPenKqYE3N3D9wsEZCS57TxTEFqxYWil9S_HPKQWrPN3lcyMtaCrKhkWdeyS5UbR_jaGkgwt-0YWpZD7fTCu7-HeIPtot_0s_TbIkhuUuQ3FdseNTOhF_vrauKWvNJ7-yEV3o-54skbxQCg7vQNl8E0yOfEUIzTXkZDF5wkGodCJ6jFjlc95PVqA33dy20sp5MyN6pP7YAU6c7EuUgywGcmv3bwNftBqVlgvGLbw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CAMPUSURL",
+			"value": "https://test.mersys.io",
+			"type": "string"
+		},
+		{
+			"key": "key",
+			"value": "eyJzdWIiOiJjYW1wdXMyNSIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNjUzMTk1LCJpYXQiOjE3NTEwNDgzOTUsInVzZXJJZCI6IjY3ZjdjZjU5NDY2ZGU1MmFjNGVkYmE0ZSIsImp0aSI6IjAxSllTOVc2RTdONlBGRThTR0FGMUQzMzc2IiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.gQImPH1dHWFaGKTPbqAG9xfKLqur0J2cCHViTkrOgtAy2jsbQmyES8VSCcINQXpfWgng4cv40Bdbjnm1O5RT6qcfYQtDkjdxarWRWklJCJbTO9kw-zDGFHAVGmmJwLtfqRwyHW8hnjbx48H5aIU12yW3xsjl3Zjy_cR1qeUMOzSyVRYGtcUzEaREydqv9m3ptRG7ce5kn1OCQhdx2bYGwOVDJXeorFP_RRkCi8TIodM14uZ3vFsHLE7V3VGX0qvzk_OQVY3xBsxpp3prGGICi1TlYwBGiL1xlQgSO6zHvTn9uPBz1zSrWOZa1D1wRxV4MrPe3IT507e7ebwM9zZNhA",
+			"type": "string"
+		},
+		{
+			"key": "schoolID",
+			"value": "6576fd8f8af7ce488ac69b89",
+			"type": "string"
+		},
+		{
+			"key": "userID",
+			"value": "646cc2ef8bdae53ff2fee598",
+			"type": "string"
+		},
+		{
+			"key": "xTenant",
+			"value": "646cb816433c0f46e7d44cb0",
+			"type": "string"
+		},
+		{
+			"key": "StandardID",
+			"value": ""
+		}
+	]
+}
