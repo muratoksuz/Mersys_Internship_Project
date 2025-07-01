@@ -1,0 +1,126 @@
+{
+  "info": {
+    "_postman_id": "3119281a-145f-4b95-a2ee-dd6af8e342fb",
+    "name": "Campus-Api Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "45099781",
+    "_collection_link": "https://solar-station-4513545.postman.co/workspace/d0bc5aaa-666a-4a8d-9d77-5f905a973aa2/collection/45099781-3119281a-145f-4b95-a2ee-dd6af8e342fb?action=share&source=collection_link&creator=45099781"
+  },
+  "item": [
+    {
+      "name": "US107-Student delete",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNjU5MTkwLCJpYXQiOjE3NTEwNTQzOTAsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllTRks1QVNRUzdRV1JRQkY5UzZRWTM0IiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.cEo5HXN-QIetUPVsfdmhzJXgoq2rWXj9Yxyp9cJoU9mLrr-4_IhMpDA_drAso5Ei61LBuMR3Y0o--qpAqRlFCe06dyVtTwlsxVO07wrA7pbC5OsUP7p2UfZLTTpjcPdCgpYucIRKQdGABazAC9qLxEN85XEtWaXAhZCLNWGL8eVnWZSRZ1s4xnMR0EI_LgdzOi4vnnsgj_pQ_fsgRhLalRI8zSLXCqRDU2-52NHBoOaeV9IR4oEALpGtelzC5cT5S5cKtoWQza5k-xBro4il8Z9_WA_wF1thU3MNLr5oEjVVRVHKqpKfmVIjhYFQoyjcuRZ7PPPP3Ew7M-Aq_W6iDQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n    \"657711ca8af7ce488ac6a629\",\r\n    \"657711ca8af7ce488ac6a62d\", \r\n    \"657711ca8af7ce488ac6a631\"\r\n    \r\n]\r\n    \r\n// eklenen öğrenci idlerinden silmek istenilenlri bu alana ekledim.\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://test.mersys.io/school-service/api/student-group/6861010d14d596fc94c1a4f6/remove-students",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "school-service",
+            "api",
+            "student-group",
+            "6861010d14d596fc94c1a4f6",
+            "remove-students"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "US107-Student delete Control",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNjU5MTkwLCJpYXQiOjE3NTEwNTQzOTAsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllTRks1QVNRUzdRV1JRQkY5UzZRWTM0IiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.cEo5HXN-QIetUPVsfdmhzJXgoq2rWXj9Yxyp9cJoU9mLrr-4_IhMpDA_drAso5Ei61LBuMR3Y0o--qpAqRlFCe06dyVtTwlsxVO07wrA7pbC5OsUP7p2UfZLTTpjcPdCgpYucIRKQdGABazAC9qLxEN85XEtWaXAhZCLNWGL8eVnWZSRZ1s4xnMR0EI_LgdzOi4vnnsgj_pQ_fsgRhLalRI8zSLXCqRDU2-52NHBoOaeV9IR4oEALpGtelzC5cT5S5cKtoWQza5k-xBro4il8Z9_WA_wF1thU3MNLr5oEjVVRVHKqpKfmVIjhYFQoyjcuRZ7PPPP3Ew7M-Aq_W6iDQ",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://test.mersys.io/school-service/api/students/group/6861010d14d596fc94c1a4f6?page=0&size=10",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "school-service",
+            "api",
+            "students",
+            "group",
+            "6861010d14d596fc94c1a4f6"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "0"
+            },
+            {
+              "key": "size",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
