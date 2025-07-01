@@ -1,0 +1,229 @@
+{
+  "info": {
+    "name": "US101 - States CRUD",
+    "_postman_id": "us101-states-crud-collection",
+    "description": "Postman collection for testing CRUD operations on States via API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Login and Get Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"turkeyts\", \"password\": \"TS.%=2025TR\", \"rememberMe\": true}"
+        },
+        "url": {
+          "raw": "https://test.mersys.io/auth/login",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"token\", jsonData.id_token);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Get All States",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://test.mersys.io/school-service/api/states",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "school-service",
+            "api",
+            "states"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Add New State",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\": null, \"name\": \"TestState\", \"country\": {\"id\": \"63b91ac3-2f31-4bcb-8e92-00e2c6cd3c92\"}}"
+        },
+        "url": {
+          "raw": "https://test.mersys.io/school-service/api/states",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "school-service",
+            "api",
+            "states"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"stateId\", jsonData.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - Update State",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"id\": \"{{stateId}}\", \"name\": \"UpdatedTestState\", \"country\": {\"id\": \"63b91ac3-2f31-4bcb-8e92-00e2c6cd3c92\"}}"
+        },
+        "url": {
+          "raw": "https://test.mersys.io/school-service/api/states",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "school-service",
+            "api",
+            "states"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 - Delete State",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://test.mersys.io/school-service/api/states/{{stateId}}",
+          "protocol": "https",
+          "host": [
+            "test",
+            "mersys",
+            "io"
+          ],
+          "path": [
+            "school-service",
+            "api",
+            "states",
+            "{{stateId}}"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200 or 204\", function () {",
+              "    pm.expect(pm.response.code === 200 || pm.response.code === 204).to.be.true;",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
