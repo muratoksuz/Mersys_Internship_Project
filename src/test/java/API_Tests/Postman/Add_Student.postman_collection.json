@@ -1,0 +1,258 @@
+{
+	"info": {
+		"_postman_id": "38980270-60f8-4cc3-898b-adb155484dff",
+		"name": "Mersys Staj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44956704",
+		"_collection_link": "https://can-aysenur-3870390.postman.co/workspace/can-aysenur's-Workspace~c0775097-11fd-4153-8168-bdce915f9236/collection/44956704-38980270-60f8-4cc3-898b-adb155484dff?action=share&source=collection_link&creator=44956704"
+	},
+	"item": [
+		{
+			"name": "Search Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var id = pm.response.json().id;\r",
+							"pm.collectionVariables.set(\"id\", id);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNzI5MDY3LCJpYXQiOjE3NTExMjQyNjcsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllWSjdNVEZYR0FHWEVSMDMwRTY5UTdTIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.ZcOO3bH95jG4pdc-34XnwIcEo9kMnwSBYs6hM4NDS2sZ_SX1yKM3zZek2qcBRTz5EW7InugEFCETRWszPk-2hLKnsjdVgvWPCUrHqr3Ch43ff-PTR0Umg3jJ4CmPPeIhy6pB32jZ3zVE4As8bcUwnL95WnpJIUlufbSsP0PfaYdHbcWyoRu_Af0oQV72NZi8mIoXVQrf_RXDYIti_C8vll2uwaYvnPVTVSQ7g-RJ7C1JCtVejsRNlzQuSntQqmJ2GZ-CTuvE5iAriDnhCzHwRwGP2XMHJ9fNNVZiyTUQXpU3UfvwoDeyuhYcyenFTOStDBlN1udJVqOe7QFuWguwlA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"studentId\": \"\",\r\n    \"classId\": \"65770d9b8af7ce488ac69bb6\",\r\n    \"schoolId\": \"6576fd8f8af7ce488ac69b89\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\",\r\n    \"gender\": null,\r\n    \"status\": null,\r\n    \"exceptIds\": [],\r\n    \"schoolClassIds\": [],\r\n    \"departmentId\": null,\r\n    \"pageSize\": 10,\r\n    \"pageIndex\": 0,\r\n    \"classStudentIds\": [],\r\n    \"academicPeriodId\": \"6577022e8af7ce488ac69b96\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/school-service/api/classes/students/pageable?page=0&size=10",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"classes",
+						"students",
+						"pageable"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Student to the Group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNzI5MDY3LCJpYXQiOjE3NTExMjQyNjcsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllWSjdNVEZYR0FHWEVSMDMwRTY5UTdTIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.ZcOO3bH95jG4pdc-34XnwIcEo9kMnwSBYs6hM4NDS2sZ_SX1yKM3zZek2qcBRTz5EW7InugEFCETRWszPk-2hLKnsjdVgvWPCUrHqr3Ch43ff-PTR0Umg3jJ4CmPPeIhy6pB32jZ3zVE4As8bcUwnL95WnpJIUlufbSsP0PfaYdHbcWyoRu_Af0oQV72NZi8mIoXVQrf_RXDYIti_C8vll2uwaYvnPVTVSQ7g-RJ7C1JCtVejsRNlzQuSntQqmJ2GZ-CTuvE5iAriDnhCzHwRwGP2XMHJ9fNNVZiyTUQXpU3UfvwoDeyuhYcyenFTOStDBlN1udJVqOe7QFuWguwlA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    \"{{id}}\"\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/school-service/api/student-group/{{groupId}}/add-students?page=0&size=10",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"student-group",
+						"{{groupId}}",
+						"add-students"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Student",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNzI5MDY3LCJpYXQiOjE3NTExMjQyNjcsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllWSjdNVEZYR0FHWEVSMDMwRTY5UTdTIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.ZcOO3bH95jG4pdc-34XnwIcEo9kMnwSBYs6hM4NDS2sZ_SX1yKM3zZek2qcBRTz5EW7InugEFCETRWszPk-2hLKnsjdVgvWPCUrHqr3Ch43ff-PTR0Umg3jJ4CmPPeIhy6pB32jZ3zVE4As8bcUwnL95WnpJIUlufbSsP0PfaYdHbcWyoRu_Af0oQV72NZi8mIoXVQrf_RXDYIti_C8vll2uwaYvnPVTVSQ7g-RJ7C1JCtVejsRNlzQuSntQqmJ2GZ-CTuvE5iAriDnhCzHwRwGP2XMHJ9fNNVZiyTUQXpU3UfvwoDeyuhYcyenFTOStDBlN1udJVqOe7QFuWguwlA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/school-service/api/student-group/{{groupId}}?page=0&size=10",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"student-group",
+						"{{groupId}}"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "schoolId",
+			"value": ""
+		},
+		{
+			"key": "studentID",
+			"value": ""
+		},
+		{
+			"key": "groupId",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": "657711ca8af7ce488ac6a629"
+		}
+	]
+}
