@@ -17,8 +17,8 @@ public class TC_105 extends MersysParent{
 
         Map<String,String>newGroup=new HashMap<>();
         newGroup.put("schoolId",SchoolId);
-        newGroup.put("name","Java6 Study Group");
-        newGroup.put("description","Group for students taking Java6 classes.");
+        newGroup.put("name","Java Study Group");
+        newGroup.put("description","Group for students taking Java classes.");
         newGroup.put("active","true");
         newGroup.put("public","false");
         newGroup.put("visibilitytoStudent","true");
@@ -48,7 +48,7 @@ public class TC_105 extends MersysParent{
         Map<String,String>updatenewGroup=new HashMap<>();
         updatenewGroup.put("id",GroupId);
         updatenewGroup.put("schoolId",SchoolId);
-        updatenewGroup.put("name","Spanish6 Study Group");
+        updatenewGroup.put("name","Spanish Study Group");
         updatenewGroup.put("description","Group for students who learn Spanish");
         updatenewGroup.put("active","true");
         updatenewGroup.put("public","false");
