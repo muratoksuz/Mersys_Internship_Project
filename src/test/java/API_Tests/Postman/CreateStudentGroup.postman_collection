@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "7708c6ec-49c3-45d0-ad1e-290f51cde81d",
+		"name": "US105",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45064461",
+		"_collection_link": "https://ennurgol.postman.co/workspace/Ennur-Gol's-Workspace~76a53855-f575-47f3-851b-c4d79151adb0/collection/45064461-7708c6ec-49c3-45d0-ad1e-290f51cde81d?action=share&source=collection_link&creator=45064461"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"turkeyts\", \r\n\"password\": \"TS.%=2025TR\", \r\n\"rememberMe\": \"true\"}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://test.mersys.io/auth/login",
+					"protocol": "http",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a student group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.collectionVariables.set(\"id\", pm.response.json().id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNjUwMTEyLCJpYXQiOjE3NTEwNDUzMTIsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllTNlkzUzNUUFlBOTJYUUpEWEU1Q05YIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.mrAYXrUKW030UWtjdHAiHlQDGnbuXxaqEYflfrkDO0zlnuJjD-j9-uUDRKJWUeAgGBkXhqdWF4vAFzVLsIPQIGrf4V5UA3XrXGV4S31RyuVoCkZkxBn0hYXkDFJPBYawn8M5qeAl-BObPU3A9r4zTx-0pX7a_c4tkUAAY3V3N8R0rXfnosZUHPlFGQkwqHwmdBPi9CxkiiRRlwVPAl_v5LHcFsG1OcWZ6oAybTr81dqYMlG3nR87QZSjLIaxcZj47xQyJ-sc1Wp37k2uXSrPEHZcPe6N12IE9nLq1vSOx5EbmkX3RCsuuKZDAIsyNIrwX66WUBmt42UUyQh_Iu2qLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"schoolId\": \"6576fd8f8af7ce488ac69b89\",\r\n \"name\": \" Java Study Group\",\r\n \"description\":\"Group for students taking Java classes.\",\r\n \"active\": \"true\",\r\n \"public\": \"false\",\r\n\"visibilitytoStudent\": \"true\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/school-service/api/student-group",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"student-group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update the student group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJzdHVkZW50XzEwIiwiaXNzIjoiY2FtcHVzIiwidGVuYW50SWQiOiI2NDZjYjgxNjQzM2MwZjQ2ZTdkNDRjYjAiLCJleHAiOjE3NTEzOTcyNzMsImlhdCI6MTc1MDc5MjQ3MywidXNlcklkIjoiNjU3NzExY2FhMThjZWUwYzI1MjU0MjU4IiwianRpIjoiMDFKWUhOVDJRQUtYTkNaVkZOUFNGQzZUR0UiLCJhdXRob3JpdGllcyI6IlJPTEVfRVZFUllPTkUsUk9MRV9TVFVERU5UIn0.B7CurLw7etP-TCIG_0gumkRdvpoKLWCuq2AjSNdeVDPLSDLsZbXL-pKK6iCMb9VVXLa9AB_3n5Wuinck5Q5Xipvv-75Vl33380Bl-FmN33TqUVhCbYKVf82SMTCIzOWyGTdu8z-PviY_HSeSIOsJOnrdt5dc3H7cMjrBXNVYphoF1BxB2q3HnnIkJuxKtt1IK2KqDleWV5gnD-UtwGmKiTnHTcXyPZ27Imopa-uoZ7-aIio7UwkR9jD7yM5B4OnUEDBKDKqUvLYWA5CTdZ67AyYXiWMfaBWLVy9TpKuySh6wh-zdqiEfmHaR1af47O6JwS4Kv2cbGYN1k-srqOsI5g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\": \"{{id}}\",\r\n\"schoolId\": \"6576fd8f8af7ce488ac69b89\",\r\n \"name\": \"Spanish Study Group \",\r\n \"description\":\"Group for students who learn Spanish\",\r\n \"active\": \"true\",\r\n \"public\": \"false\",\r\n\"visibilitytoStudent\": \"true\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/school-service/api/student-group",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"student-group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete the student group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0dXJrZXl0cyIsImlzcyI6ImNhbXB1cyIsInRlbmFudElkIjoiNjQ2Y2I4MTY0MzNjMGY0NmU3ZDQ0Y2IwIiwiZXhwIjoxNzUxNjUwMTEyLCJpYXQiOjE3NTEwNDUzMTIsInVzZXJJZCI6IjY0NmNjMmVmOGJkYWU1M2ZmMmZlZTU5OCIsImp0aSI6IjAxSllTNlkzUzNUUFlBOTJYUUpEWEU1Q05YIiwiYXV0aG9yaXRpZXMiOiJST0xFX1RFQ0hOT19URVNULFJPTEVfRVZFUllPTkUifQ.mrAYXrUKW030UWtjdHAiHlQDGnbuXxaqEYflfrkDO0zlnuJjD-j9-uUDRKJWUeAgGBkXhqdWF4vAFzVLsIPQIGrf4V5UA3XrXGV4S31RyuVoCkZkxBn0hYXkDFJPBYawn8M5qeAl-BObPU3A9r4zTx-0pX7a_c4tkUAAY3V3N8R0rXfnosZUHPlFGQkwqHwmdBPi9CxkiiRRlwVPAl_v5LHcFsG1OcWZ6oAybTr81dqYMlG3nR87QZSjLIaxcZj47xQyJ-sc1Wp37k2uXSrPEHZcPe6N12IE9nLq1vSOx5EbmkX3RCsuuKZDAIsyNIrwX66WUBmt42UUyQh_Iu2qLQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test.mersys.io/school-service/api/student-group/{{id}}",
+					"protocol": "https",
+					"host": [
+						"test",
+						"mersys",
+						"io"
+					],
+					"path": [
+						"school-service",
+						"api",
+						"student-group",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}
