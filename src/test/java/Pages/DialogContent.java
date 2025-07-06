@@ -30,35 +30,187 @@ public class DialogContent extends ParentPage{
     @FindBy(xpath="//*[@aria-label='LOGIN']")
     public WebElement loginButton;
 
-    @FindBy(xpath="//*[contains(text(),'Invalid username or password')]")
+
+    @FindBy(xpath = "//*[contains(text(),'Invalid username or password')]")
     public WebElement invalidTextClick;
 
-    @FindBy(xpath="//*[@class='hot-toast-bar-base-wrapper']")
+    @FindBy(xpath = "//*[@class='hot-toast-bar-base-wrapper']")
     public WebElement invalidText;
 
-    @FindBy(xpath="//*[contains(text(),'Welcome, Student')]")
+    @FindBy(xpath = "//img[contains(@src,'data:image/png')]")
+    public WebElement logoTechnoStudy;
+
+    @FindBy(xpath = "//*[@page='COURSES']/button")
+    public WebElement courses;
+
+    @FindBy(xpath = "//*[@page='CALENDAR']")
+    public WebElement calendar;
+
+    @FindBy(xpath = "//*[@page='ATTENDANCE']")
+    public WebElement attendance;
+
+    @FindBy(xpath = "//*[@page='ASSIGNMENT']")
+    public WebElement assignments;
+
+    @FindBy(xpath = "//*[@page='GRADING']")
+    public WebElement grading;
+
+    // alternatif --- //user-announcement-bell//button
+    @FindBy(xpath = "//user-announcement-bell//span[@class='mat-focus-indicator']")
+    public WebElement announcements;
+
+    // alternatif --- //user-message-bell//button
+    @FindBy(xpath = "//user-message-bell//span[@class='mat-focus-indicator']")
+    public WebElement messages;
+
+
+    // HAMBURGER MENU VE İÇİNDEKİLER ****
+
+    @FindBy(xpath = "(//button[@mat-menu-item])[2]/span")
+    public WebElement finance;
+
+    @FindBy(xpath = "(//button[@mat-menu-item])[3]")
+    public WebElement attendanceHMenu;
+
+    @FindBy(xpath = "(//button[@mat-menu-item])[4]")
+    public WebElement videoConference;
+
+    @FindBy(xpath = "(//button[@mat-menu-item])[5]")
+    public WebElement surveys;
+
+
+
+    @FindBy(xpath = "//*[text()=' New Message ']")
+    public WebElement sendMessageTxt;
+
+    @FindBy(xpath = "//*[text()=' Inbox ']")
+    public WebElement inboxTxt;
+
+    @FindBy(xpath = "//*[text()=' Outbox ']")
+    public WebElement outboxTxt;
+
+    @FindBy(xpath = "//*[text()=' Trash ']")
+    public WebElement trashTxt;
+
+    @FindBy(xpath = "//*[text()=' Students Fees ']")
+    public WebElement studentFeeTxt;
+
+    @FindBy(xpath = "//*[text()=' Attendance Excuses ']")
+    public WebElement attendanceExcusesTxt;
+
+    @FindBy(xpath = "//*[text()=' My Surveys ']")
+    public WebElement mySurveysTxt;
+
+    @FindBy(xpath = "//*[text()=' Video Meetings ']")
+    public WebElement videoMeetingTxt;
+
+
+
+    @FindBy(xpath = "//*[text()='Send Message']")
+    public WebElement sendMessage;
+
+    @FindBy(xpath = "//*[text()='Inbox']")
+    public WebElement inbox;
+
+    @FindBy(xpath = "//*[text()='Outbox']")
+    public WebElement outbox;
+
+    @FindBy(xpath = "//*[text()='Trash']")
+    public WebElement trash;
+
+
+    @FindBy(xpath = "//*[text()='My Finance']")
+    public WebElement myFinanceInHMenu;
+
+    @FindBy(xpath = "//*[text()='Attendance Excuses (Parents)']")
+    public WebElement attendanceExcuses;
+
+    @FindBy(xpath = "//*[text()='Video Meetings']")
+    public WebElement videoMeetingsInHMenu;
+
+    @FindBy(xpath = "//*[text()='My Surveys']")
+    public WebElement mySurveysInHMenu;
+
+
+    // HAMBURGER MENU VE İÇİNDEKİLER ****
+
+
+    // PROFİL BUTONU VE İÇİNDEKİLER
+
+    @FindBy(xpath = "//div[2]/button/span[2]/div")
+    public WebElement profileBtn;
+
+    @FindBy(xpath = "//*[contains(text(),'My Certificates')]")
+    public WebElement myCertificatesBtn;
+
+    @FindBy(xpath = "//*[contains(text(),'Search')]")
+    public WebElement searchBtnInC;
+
+    @FindBy(xpath = "//*[text()='My Files']")
+    public WebElement myFilesBtn;
+
+    @FindBy(xpath = "//*[text()='My Drive']")
+    public WebElement myDriveTxt;
+
+    @FindBy(xpath = "//*[@aria-label='Close dialog']")
+    public WebElement closeBtnInMyFiles;
+
+    @FindBy(xpath = "//*[text()='Change Password']")
+    public WebElement changePasswordBtn;
+
+    @FindBy(xpath = "//*[text()=' Change Password']")
+    public WebElement changePasswordBtnTxt;
+
+    @FindBy(xpath = "//*[@aria-label='Close dialog']")
+    public WebElement changePasswordCloseBtn;
+
+    @FindBy(xpath = "//*[text()='Settings']")
+    public WebElement settingsBtn;
+
+    @FindBy(xpath = "//*[text()=' Settings']")
+    public WebElement settingsText;
+
+    @FindBy(xpath = "//*[@aria-label='Close dialog']")
+    public WebElement closeSettingsBtn;
+
+    // PROFİL BUTONU VE İÇİNDEKİLER
+
+
+    //  Text visible
+
+    @FindBy(xpath = "//mat-tab-header//div[@role='tab'][@aria-posinset='1']")
+    public WebElement weeklyCoursePlan;
+
+    @FindBy(xpath = "//*[text()=' Attendance ']")
+    public WebElement attendanceTxt;
+
+    @FindBy(xpath = "//span[contains(@style,'font') and contains(text(),'Assignments')]")
+    public WebElement assignmentsText;
+
+    @FindBy(xpath = "//span[text()=' Announcements']")
+    public WebElement announcementsTextVisible;
+
+    @FindBy(xpath = "//*[text()=' Messages']")
+    public WebElement messagesTxtVisible;
+
+    @FindBy(xpath = "//*[contains(text(),'Welcome, Student')]")
     public WebElement welcomeStudentTxt;
 
-    @FindBy(xpath="//img[contains(@src,'data:image/png')]")
-    public WebElement logoTechnoStudy;
+    @FindBy(xpath = "//span[text()=' Course Grade ']")
+    public WebElement courseGradeText;
+
+
+    //  Text visible
+
 
     @FindBy(xpath="//*[@page='COURSES']")
     public WebElement CoursesBtn;
 
-    @FindBy(xpath="//*[@page='CALENDAR']")
-    public WebElement CalendarBtn;
 
     @FindBy(xpath="//*[@page='ATTENDANCE']")
     public WebElement AttendanceBtn;
 
-    @FindBy(xpath="//*[@page='ASSIGNMENT']")
-    public WebElement AssignmentBtn;
 
-    @FindBy(xpath="//*[@page='GRADING']")
-    public WebElement GradingBtn;
-
-    @FindBy(xpath="//*[contains(@style,'margin-right')]/span/button")
-    public WebElement HamburgerMenu;
 
     // TC_001_Steps,TC_002_Steps,TC_003
 
@@ -609,6 +761,159 @@ public class DialogContent extends ParentPage{
         }
         return null;
     }
+
+
+    public WebElement getTopMenu(String topMenu) {
+        switch (topMenu.toLowerCase()) {
+
+            case "courses":
+                return this.courses;
+            case "calendar":
+                return this.calendar;
+            case "attendance":
+                return this.attendance;
+            case "assignments":
+                return this.assignments;
+            case "grading":
+                return this.grading;
+            case "announcements":
+                return this.announcements;
+            case "messages":
+                return this.messages;
+        }
+        return null;
+    }
+
+    public WebElement getVisibleElement(String elements) {
+        switch (elements) {
+            case "welcomeStudentTxt":
+                return this.welcomeStudentTxt;
+            case "weeklyCoursePlan":
+                return this.weeklyCoursePlan;
+            case "attendanceTxt":
+                return this.attendanceTxt;
+            case "assignmentsText":
+                return this.assignmentsText;
+            case "courseGradeText":
+                return this.courseGradeText;
+            case "announcementsTextVisible":
+                return this.announcementsTextVisible;
+            case "messagesTxtVisible":
+                return this.messagesTxtVisible;
+        }
+        return null;
+    }
+
+    public WebElement getSectionElement(String sectionName) {
+        switch (sectionName) {
+            case "messaging":
+                return this.messaging;
+            case "finance":
+                return this.finance;
+            case "attendanceHMenu":
+                return this.attendanceHMenu;
+            case "videoConference":
+                return this.videoConference;
+            case "surveys":
+                return this.surveys;
+
+        }
+        return null;
+    }
+
+    public WebElement getSingleSubMenuElement(String subMenus) {
+        switch (subMenus) {
+            case "myFinanceInHMenu":
+                return this.myFinanceInHMenu;
+            case "attendanceExcuses":
+                return this.attendanceExcuses;
+            case "videoMeetingsInHMenu":
+                return this.videoMeetingsInHMenu;
+            case "mySurveysInHMenu":
+                return this.mySurveysInHMenu;
+        }
+        return null;
+    }
+
+    public WebElement getMessagingSubMenu(String subMenus) {
+        switch (subMenus) {
+            case "sendMessage":
+                return this.sendMessage;
+            case "inbox":
+                return this.inbox;
+            case "outbox":
+                return this.outbox;
+            case "trash":
+                return this.trash;
+        }
+        return null;
+    }
+
+
+    // DialogContent sınıfına eklenecek metod
+    public String getSubMenuName(String sectionName) {
+        switch (sectionName) {
+            case "finance":
+                return "myFinanceInHMenu";
+            case "attendanceHMenu":
+                return "attendanceExcuses";
+            case "videoConference":
+                return "videoMeetingsInHMenu";
+            case "surveys":
+                return "mySurveysInHMenu";
+            default:
+                return null;
+        }
+    }
+
+
+    public WebElement getProfileSectionElement(String sectionName) {
+        switch (sectionName) {
+            case "My Certificates":
+                return myCertificatesBtn;
+            case "My Files":
+                return myFilesBtn;
+            case "Change Password":
+                return changePasswordBtn;
+            case "Settings":
+                return settingsBtn;
+            default:
+                throw new IllegalArgumentException("Invalid Section: " + sectionName);
+        }
+    }
+
+    public WebElement getProfileExpectedElement(String key) {
+        switch (key) {
+            case "searchBtnInC":
+                return searchBtnInC;
+            case "myDriveTxt":
+                return myDriveTxt;
+            case "changePasswordBtnTxt":
+                return changePasswordBtnTxt;
+            case "settingsText":
+                return settingsText;
+            default:
+                throw new IllegalArgumentException("Undefined Expected Element: " + key);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void verifyMessageContainsText(WebElement element, String searchText){
         wait.until(ExpectedConditions.visibilityOf(element));
